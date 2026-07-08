@@ -7,19 +7,24 @@
   "objectives": [
     "input()で1行の入力を受け取れる",
     "入力が最初は文字列であることを説明できる",
-    "intとstr()を使って値の種類を変換できる"
+    "int()とstr()を使って値の種類を変換できる"
   ],
   "prerequisiteIds": ["values-and-variables"],
   "termIds": [
+    "input-concept",
+    "output-concept",
+    "value",
+    "string",
+    "number",
+    "variable",
+    "type-conversion",
+    "function",
     "input",
     "int",
     "str",
-    "type-conversion",
     "standard-input",
     "standard-output",
-    "string",
-    "number",
-    "variable"
+    "print"
   ],
   "tipIds": [
     "input-starts-as-text",

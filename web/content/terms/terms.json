@@ -9,7 +9,7 @@
     "short": "値を標準出力へ送るための関数です。",
     "detail": "丸かっこの中に渡した値を表示用の文字として標準出力へ送ります。複数の値をカンマで区切って渡すこともできます。",
     "later": "実際には画面そのものではなく、標準出力という出力先へ文字を送っています。",
-    "relatedTermIds": ["standard-output", "string"]
+    "relatedTermIds": ["output-concept", "standard-output", "function", "string"]
   },
   {
     "id": "comment",
@@ -46,6 +46,30 @@
     "detail": "たとえば 3、\"hello\"、True はどれも値です。プログラムは、値を受け取り、名前を付け、計算し、別の値として出力します。",
     "later": "Pythonでは値はオブジェクトであり、それぞれ型と振る舞いを持ちます。最初は、計算や表示の材料になるもの、と考えれば十分です。",
     "relatedTermIds": ["expression", "number", "string", "boolean", "variable"]
+  },
+  {
+    "id": "input-concept",
+    "label": "入力",
+    "aliases": ["受け取る値"],
+    "category": "general-concept",
+    "descriptionTargetId": "input-concept",
+    "autoLink": false,
+    "short": "プログラムの外から受け取る情報です。",
+    "detail": "人がキーボードで入力した文字、問題として渡されるデータ、別の仕組みから届く値など、プログラムの外側から入ってくる情報を入力と呼びます。",
+    "later": "競技プログラミングや自動採点では、入力は標準入力という窓口から渡されます。Pythonではinput()を使って標準入力から1行を受け取れます。",
+    "relatedTermIds": ["standard-input", "input", "value"]
+  },
+  {
+    "id": "output-concept",
+    "label": "出力",
+    "aliases": ["表示する結果"],
+    "category": "general-concept",
+    "descriptionTargetId": "output-concept",
+    "autoLink": false,
+    "short": "プログラムが外へ出す結果です。",
+    "detail": "計算した答え、判定結果、メッセージなど、プログラムが外側へ見せる情報を出力と呼びます。問題では、何をどの順番で出力するかが答えの一部になります。",
+    "later": "Pythonではprint()で標準出力へ値を送ります。自動採点では、標準出力の内容が期待された出力と一致するかを見られます。",
+    "relatedTermIds": ["standard-output", "print", "value"]
   },
   {
     "id": "expression",
@@ -120,6 +144,18 @@
     "relatedTermIds": ["number", "value", "expression"]
   },
   {
+    "id": "function",
+    "label": "関数",
+    "aliases": ["呼び出せる処理"],
+    "category": "programming-concept",
+    "descriptionTargetId": "function",
+    "autoLink": false,
+    "short": "名前を使って呼び出せる処理のまとまりです。",
+    "detail": "print() や input() のように、名前の後ろに丸かっこを付けて実行する処理を関数と呼びます。最初は、Pythonが用意してくれている便利な命令、と考えて構いません。",
+    "later": "後の章では、自分で関数を作り、処理に名前を付けて再利用する方法を学びます。引数や戻り値も関数を理解するための大切な考え方です。",
+    "relatedTermIds": ["print", "input", "int", "str"]
+  },
+  {
     "id": "input",
     "label": "input()",
     "aliases": ["input", "input関数"],
@@ -129,7 +165,7 @@
     "short": "標準入力から1行を受け取る関数です。",
     "detail": "受け取った行末の改行を除き、文字列として返します。数値計算にはint()などの型変換が必要です。",
     "later": "大量の入力ではsys.stdinなど別の方法を使うこともあります。",
-    "relatedTermIds": ["standard-input", "string", "int"]
+    "relatedTermIds": ["input-concept", "standard-input", "function", "string", "int"]
   },
   {
     "id": "int",
@@ -141,7 +177,7 @@
     "short": "値を整数として作るための関数です。",
     "detail": "int(\"12\") は整数の12を作ります。整数として読めない文字列を渡すとエラーになります。",
     "later": "int()は整数型の名前でもあります。整数の大きさには、利用できるメモリ以外の固定上限がありません。",
-    "relatedTermIds": ["number", "type-conversion", "input"]
+    "relatedTermIds": ["number", "type-conversion", "input", "function"]
   },
   {
     "id": "str",
@@ -153,7 +189,7 @@
     "short": "値を文字列として作るための関数です。",
     "detail": "str(12) は文字列の\"12\"を作ります。表示用の文を組み立てる場面などで使います。",
     "later": "str()は文字列型の名前でもあります。オブジェクトの文字列表現を作る役割があります。",
-    "relatedTermIds": ["string", "type-conversion"]
+    "relatedTermIds": ["string", "type-conversion", "function"]
   },
   {
     "id": "type-conversion",
@@ -177,7 +213,7 @@
     "short": "プログラムが基本的な入力を受け取る窓口です。",
     "detail": "ターミナルからの入力や、問題のテストデータなどがこの窓口へ渡されます。",
     "later": "OSが提供するストリームの一つで、ファイルや別プロセスから接続することもできます。",
-    "relatedTermIds": ["input", "standard-output"]
+    "relatedTermIds": ["input-concept", "input", "standard-output"]
   },
   {
     "id": "standard-output",
@@ -189,7 +225,7 @@
     "short": "プログラムが基本的な結果を送り出す窓口です。",
     "detail": "print()で表示した内容は標準出力へ送られます。採点では、この内容と期待結果が比較されます。",
     "later": "標準エラー出力という、エラーや診断情報用の別の窓口もあります。",
-    "relatedTermIds": ["print", "standard-input"]
+    "relatedTermIds": ["output-concept", "print", "standard-input"]
   },
   {
     "id": "boolean",

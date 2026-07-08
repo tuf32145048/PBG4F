@@ -18,7 +18,7 @@
     "title": "入力は最初に文字列として届く",
     "body": "キーボードから3と入力しても、inputが返す値は文字列です。計算前にint()へ変換する習慣を付けます。",
     "lessonIds": ["input-and-conversion"],
-    "termIds": ["input", "string", "int", "type-conversion"]
+    "termIds": ["input-concept", "input", "string", "int", "type-conversion"]
   },
   {
     "id": "output-is-a-contract",
@@ -31,7 +31,7 @@
       "comparison-and-booleans",
       "if-statements"
     ],
-    "termIds": ["print", "standard-output"]
+    "termIds": ["output-concept", "print", "standard-output"]
   },
   {
     "id": "separate-steps",
@@ -42,7 +42,14 @@
       "comparison-and-booleans",
       "if-statements"
     ],
-    "termIds": ["input", "type-conversion", "print", "variable"]
+    "termIds": [
+      "input-concept",
+      "output-concept",
+      "input",
+      "type-conversion",
+      "print",
+      "variable"
+    ]
   },
   {
     "id": "equals-needs-two-equals",

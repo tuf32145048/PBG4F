@@ -11,11 +11,15 @@
   ],
   "prerequisiteIds": [],
   "termIds": [
+    "output-concept",
+    "value",
+    "string",
+    "function",
     "print",
     "comment",
     "error-message",
     "standard-output",
-    "string"
+    "number"
   ],
   "tipIds": ["errors-are-clues", "output-is-a-contract"]
 }

@@ -12,6 +12,7 @@
   "prerequisiteIds": ["getting-started"],
   "termIds": [
     "value",
+    "expression",
     "number",
     "string",
     "variable",

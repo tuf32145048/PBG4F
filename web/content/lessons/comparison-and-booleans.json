@@ -11,14 +11,15 @@
   ],
   "prerequisiteIds": ["input-and-conversion"],
   "termIds": [
-    "comparison-operator",
-    "boolean",
     "condition",
     "expression",
     "condition-expression",
-    "assignment",
+    "boolean",
+    "comparison-operator",
+    "value",
     "number",
     "string",
+    "assignment",
     "input",
     "int",
     "print"

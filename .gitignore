@@ -1,3 +1,8 @@
 notes/
 prompts/
 AGENTS.md
+
+web/node_modules/
+web/dist/
+web/coverage/
+web/.vite/

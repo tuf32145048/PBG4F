@@ -1,0 +1,21 @@
+{
+  "id": "getting-started",
+  "slug": "getting-started",
+  "order": 0,
+  "title": "コードを書いて動かす",
+  "summary": "最初の1行を動かし、表示・コメント・エラーの読み方を知ります。",
+  "objectives": [
+    "printを使って文字を表示できる",
+    "コメントを使ってコードへメモを残せる",
+    "エラーメッセージを失敗ではなく手がかりとして読める"
+  ],
+  "prerequisiteIds": [],
+  "termIds": [
+    "print",
+    "comment",
+    "error-message",
+    "standard-output",
+    "string"
+  ],
+  "tipIds": ["errors-are-clues", "output-is-a-contract"]
+}

@@ -1,0 +1,51 @@
+:root {
+  font-family:
+    Inter, "Noto Sans JP", "Yu Gothic UI", "Hiragino Sans", sans-serif;
+  color: #202736;
+  background: #f2efe7;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  line-height: 1.7;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background:
+    linear-gradient(rgba(29, 38, 55, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(29, 38, 55, 0.035) 1px, transparent 1px),
+    #f2efe7;
+  background-size: 32px 32px;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+a {
+  color: inherit;
+}
+
+button:focus-visible,
+a:focus-visible,
+summary:focus-visible,
+input:focus-visible {
+  outline: 3px solid #f1b84b;
+  outline-offset: 3px;
+}
+
+::selection {
+  color: #fff;
+  background: #c9543d;
+}

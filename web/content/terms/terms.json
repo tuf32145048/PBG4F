@@ -1,0 +1,182 @@
+[
+  {
+    "id": "print",
+    "label": "print",
+    "aliases": ["print関数"],
+    "short": "値を画面へ表示するための関数です。",
+    "detail": "丸かっこの中に渡した値を標準出力へ送ります。複数の値をカンマで区切って渡すこともできます。",
+    "later": "実際には画面そのものではなく標準出力という出力先へ文字を送っています。",
+    "relatedTermIds": ["standard-output", "string"]
+  },
+  {
+    "id": "comment",
+    "label": "コメント",
+    "aliases": ["注釈"],
+    "short": "実行されない、コード内の説明文です。",
+    "detail": "Pythonでは#から行末までがコメントになります。処理の目的や注意点を短く残すために使います。",
+    "later": "コメントが多すぎる場合は、変数名や関数名で意図を表せないか考えることも大切です。",
+    "relatedTermIds": ["error-message"]
+  },
+  {
+    "id": "error-message",
+    "label": "エラーメッセージ",
+    "aliases": ["エラー文"],
+    "short": "Pythonが処理を続けられなかった理由の報告です。",
+    "detail": "エラーの種類、場所、関連するコードが示されます。まず最後の行と行番号を確認します。",
+    "later": "複数行のトレースバックを上からたどると、関数の呼び出し経路も確認できます。",
+    "relatedTermIds": ["comment"]
+  },
+  {
+    "id": "value",
+    "label": "値",
+    "aliases": ["データ"],
+    "short": "プログラムが扱う数値や文字などの情報です。",
+    "detail": "3、\"hello\"、Trueなどはすべて値です。値には種類があり、できる操作が異なります。",
+    "later": "Pythonでは値はオブジェクトであり、それぞれ型と振る舞いを持ちます。",
+    "relatedTermIds": ["number", "string", "variable"]
+  },
+  {
+    "id": "number",
+    "label": "数値",
+    "aliases": ["数字", "整数"],
+    "short": "計算に使える値です。",
+    "detail": "この教材の序盤では主に整数を扱います。引用符で囲むと数値ではなく文字列になります。",
+    "later": "Pythonには整数のint、小数のfloat、複素数のcomplexなどがあります。",
+    "relatedTermIds": ["value", "arithmetic-operator", "int"]
+  },
+  {
+    "id": "string",
+    "label": "文字列",
+    "aliases": ["str", "テキスト"],
+    "short": "文字を順番に並べた値です。",
+    "detail": "引用符で囲んで書きます。+で文字列同士をつなぐことができます。",
+    "later": "文字列は変更不可のシーケンスで、添字やスライスによる操作ができます。",
+    "relatedTermIds": ["value", "str", "input"]
+  },
+  {
+    "id": "variable",
+    "label": "変数",
+    "aliases": ["名前"],
+    "short": "値を後から参照するために付ける名前です。",
+    "detail": "代入によって値と名前を結び付けます。何を表す値か分かる名前にすると読みやすくなります。",
+    "later": "Pythonの変数は箱というより、オブジェクトを参照する名前として捉えると正確です。",
+    "relatedTermIds": ["value", "assignment"]
+  },
+  {
+    "id": "assignment",
+    "label": "代入",
+    "aliases": ["値を入れる"],
+    "short": "変数名と値を結び付ける操作です。",
+    "detail": "price = 100 のように、左側へ名前、右側へ値を書きます。数学の等号とは役割が異なります。",
+    "later": "代入は文であり、比較に使う==とは明確に区別されます。",
+    "relatedTermIds": ["variable", "comparison-operator"]
+  },
+  {
+    "id": "arithmetic-operator",
+    "label": "算術演算子",
+    "aliases": ["計算記号", "演算子"],
+    "short": "足し算や掛け算などを表す記号です。",
+    "detail": "+、-、*、/、//、%などがあります。計算の優先順位は通常の算数とほぼ同じです。",
+    "later": "同じ演算子でも、値の型によって動作が変わることがあります。",
+    "relatedTermIds": ["number", "value"]
+  },
+  {
+    "id": "input",
+    "label": "input",
+    "aliases": ["input関数"],
+    "short": "標準入力から1行を受け取る関数です。",
+    "detail": "受け取った行末の改行を除き、文字列として返します。数値計算にはintなどの型変換が必要です。",
+    "later": "大量の入力ではsys.stdinなど別の方法を使うこともあります。",
+    "relatedTermIds": ["standard-input", "string", "int"]
+  },
+  {
+    "id": "int",
+    "label": "int",
+    "aliases": ["整数型", "int関数"],
+    "short": "整数を表す型で、文字列を整数へ変換するときにも使います。",
+    "detail": "int(\"12\") は整数の12を作ります。整数として読めない文字列を渡すとエラーになります。",
+    "later": "整数の大きさには、利用できるメモリ以外の固定上限がありません。",
+    "relatedTermIds": ["number", "type-conversion", "input"]
+  },
+  {
+    "id": "str",
+    "label": "str",
+    "aliases": ["文字列型", "str関数"],
+    "short": "文字列を表す型で、値を文字列へ変換するときにも使います。",
+    "detail": "str(12) は文字列の\"12\"を作ります。表示用の文を組み立てる場面などで使います。",
+    "later": "strはオブジェクトの文字列表現を作ります。独自クラスでは表現方法を定義できます。",
+    "relatedTermIds": ["string", "type-conversion"]
+  },
+  {
+    "id": "type-conversion",
+    "label": "型変換",
+    "aliases": ["キャスト", "変換"],
+    "short": "値を別の種類として作り直すことです。",
+    "detail": "int(\"3\") や str(3) のように使います。変換できない内容を渡すとエラーになります。",
+    "later": "暗黙に行われる変換と、コードで明示する変換があります。Pythonでは明示的な変換をよく使います。",
+    "relatedTermIds": ["int", "str", "value"]
+  },
+  {
+    "id": "standard-input",
+    "label": "標準入力",
+    "aliases": ["stdin"],
+    "short": "プログラムが基本的な入力を受け取る窓口です。",
+    "detail": "ターミナルからの入力や、問題のテストデータなどがこの窓口へ渡されます。",
+    "later": "OSが提供するストリームの一つで、ファイルや別プロセスから接続することもできます。",
+    "relatedTermIds": ["input", "standard-output"]
+  },
+  {
+    "id": "standard-output",
+    "label": "標準出力",
+    "aliases": ["stdout"],
+    "short": "プログラムが基本的な結果を送り出す窓口です。",
+    "detail": "printで表示した内容は標準出力へ送られます。採点では、この内容と期待結果が比較されます。",
+    "later": "標準エラー出力という、エラーや診断情報用の別の窓口もあります。",
+    "relatedTermIds": ["print", "standard-input"]
+  },
+  {
+    "id": "boolean",
+    "label": "真偽値",
+    "aliases": ["bool", "ブール値"],
+    "short": "正しいか正しくないかを表すTrueまたはFalseです。",
+    "detail": "比較の結果として得られ、条件分岐で処理を選ぶために使います。",
+    "later": "and、or、notを使って複数の条件を論理的に組み合わせられます。",
+    "relatedTermIds": ["comparison-operator", "condition"]
+  },
+  {
+    "id": "comparison-operator",
+    "label": "比較演算子",
+    "aliases": ["比較記号"],
+    "short": "2つの値を比べて真偽値を作る記号です。",
+    "detail": "==、!=、<、<=、>、>=などがあります。代入の=と、等しいか調べる==を区別します。",
+    "later": "比較は連結して 0 <= score < 100 のようにも書けます。",
+    "relatedTermIds": ["boolean", "condition", "assignment"]
+  },
+  {
+    "id": "condition",
+    "label": "条件式",
+    "aliases": ["条件"],
+    "short": "結果がTrueまたはFalseになる式です。",
+    "detail": "score >= 60 のような比較を使い、処理を実行するか判断します。",
+    "later": "値そのものも真偽値として評価される場合があります。",
+    "relatedTermIds": ["boolean", "comparison-operator", "if-statement"]
+  },
+  {
+    "id": "if-statement",
+    "label": "if文",
+    "aliases": ["条件分岐"],
+    "short": "条件によって実行する処理を選ぶ構文です。",
+    "detail": "ifの後ろへ条件式を書き、条件がTrueのときにインデントされた処理を実行します。",
+    "later": "elifやelseを組み合わせると、複数の経路から一つを選べます。",
+    "relatedTermIds": ["condition", "indentation"]
+  },
+  {
+    "id": "indentation",
+    "label": "インデント",
+    "aliases": ["字下げ"],
+    "short": "行の先頭へ空白を置き、処理のまとまりを表すことです。",
+    "detail": "Pythonでは見た目だけでなく文法の一部です。通常は半角スペース4個を使います。",
+    "later": "インデントで作られるまとまりをブロックと呼びます。",
+    "relatedTermIds": ["if-statement"]
+  }
+]

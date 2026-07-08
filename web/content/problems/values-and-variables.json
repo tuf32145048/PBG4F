@@ -1,0 +1,272 @@
+[
+  {
+    "id": "add-two-numbers",
+    "slug": "add-two-numbers",
+    "lessonId": "values-and-variables",
+    "title": "2つの数を足す",
+    "level": 1,
+    "conceptIds": ["number", "arithmetic-operator", "print"],
+    "statement": "整数 `8` と `5` の合計を計算して表示してください。",
+    "inputFormat": "入力はありません。",
+    "outputFormat": "計算結果を表示します。",
+    "samples": [{ "input": "", "output": "13\n" }],
+    "hints": ["足し算には+を使います。", "計算式をprintの中へ書けます。"],
+    "solution": {
+      "code": "print(8 + 5)",
+      "explanation": "8 + 5を計算し、その結果を表示します。"
+    },
+    "explanationTrace": [
+      { "step": "値を確認", "detail": "使う数は8と5です。" },
+      { "step": "式にする", "detail": "合計なので8 + 5です。" },
+      { "step": "手計算", "detail": "8 + 5 = 13を確認して表示します。" }
+    ],
+    "commonMistakes": ["`\"8\" + \"5\"` と文字列をつなぐ。"],
+    "reviewChecklist": [
+      { "id": "number-values", "label": "8と5を数値として書いている" },
+      { "id": "plus", "label": "足し算に+を使っている" }
+    ]
+  },
+  {
+    "id": "remaining-coins",
+    "slug": "remaining-coins",
+    "lessonId": "values-and-variables",
+    "title": "残りのコイン",
+    "level": 1,
+    "conceptIds": ["number", "arithmetic-operator"],
+    "statement": "コインを20枚持っています。7枚使った後の枚数を表示してください。",
+    "inputFormat": "入力はありません。",
+    "outputFormat": "残りの枚数を表示します。",
+    "samples": [{ "input": "", "output": "13\n" }],
+    "hints": ["残りは、最初の枚数から使った枚数を引きます。", "`20 - 7` を計算します。"],
+    "solution": {
+      "code": "print(20 - 7)",
+      "explanation": "20枚から7枚を引くと13枚です。"
+    },
+    "explanationTrace": [
+      { "step": "最初の量", "detail": "コインは20枚あります。" },
+      { "step": "変化", "detail": "7枚使うので引き算です。" },
+      { "step": "結果", "detail": "20 - 7 = 13を表示します。" }
+    ],
+    "commonMistakes": ["7 - 20と順番を逆にする。"],
+    "reviewChecklist": [
+      { "id": "subtraction-order", "label": "20から7を引いている" },
+      { "id": "result-only", "label": "数値だけを出力している" }
+    ]
+  },
+  {
+    "id": "three-boxes",
+    "slug": "three-boxes",
+    "lessonId": "values-and-variables",
+    "title": "3箱の合計",
+    "level": 1,
+    "conceptIds": ["number", "arithmetic-operator"],
+    "statement": "1箱に6個のアイテムが入っています。3箱分の個数を表示してください。",
+    "inputFormat": "入力はありません。",
+    "outputFormat": "アイテムの合計個数を表示します。",
+    "samples": [{ "input": "", "output": "18\n" }],
+    "hints": ["同じ個数の箱が3つあります。", "6 * 3で計算できます。"],
+    "solution": {
+      "code": "print(6 * 3)",
+      "explanation": "1箱6個が3箱あるため、掛け算を使います。"
+    },
+    "explanationTrace": [
+      { "step": "1組の量", "detail": "1箱は6個です。" },
+      { "step": "組の数", "detail": "箱は3つあります。" },
+      { "step": "式にする", "detail": "6 * 3 = 18です。" }
+    ],
+    "commonMistakes": ["掛け算へxを使う。Pythonでは*を使います。"],
+    "reviewChecklist": [
+      { "id": "multiply-symbol", "label": "掛け算に*を使っている" },
+      { "id": "box-count", "label": "6を3回分として計算している" }
+    ]
+  },
+  {
+    "id": "share-cards",
+    "slug": "share-cards",
+    "lessonId": "values-and-variables",
+    "title": "カードを同じ枚数ずつ",
+    "level": 2,
+    "conceptIds": ["number", "arithmetic-operator"],
+    "statement": "17枚のカードを4人へ同じ枚数ずつ配ります。1人が受け取る枚数を表示してください。余りは配りません。",
+    "inputFormat": "入力はありません。",
+    "outputFormat": "1人分の枚数を整数で表示します。",
+    "samples": [{ "input": "", "output": "4\n" }],
+    "hints": ["小数ではなく整数の商を求めます。", "整数の商には//を使います。"],
+    "solution": {
+      "code": "print(17 // 4)",
+      "explanation": "17を4で割った整数の商は4です。"
+    },
+    "explanationTrace": [
+      { "step": "求めるもの", "detail": "1人あたりの整数枚数です。" },
+      { "step": "演算を選ぶ", "detail": "余りを除く割り算なので//です。" },
+      { "step": "確認", "detail": "4枚ずつ配ると16枚を使います。" }
+    ],
+    "commonMistakes": ["/を使って4.25と表示する。"],
+    "reviewChecklist": [
+      { "id": "floor-division", "label": "整数の商に//を使っている" },
+      { "id": "integer-output", "label": "4と整数で出力している" }
+    ]
+  },
+  {
+    "id": "leftover-cards",
+    "slug": "leftover-cards",
+    "lessonId": "values-and-variables",
+    "title": "配った後の余り",
+    "level": 2,
+    "conceptIds": ["number", "arithmetic-operator"],
+    "statement": "17枚のカードを4人へ同じ枚数ずつ配ったとき、余る枚数を表示してください。",
+    "inputFormat": "入力はありません。",
+    "outputFormat": "余りの枚数を表示します。",
+    "samples": [{ "input": "", "output": "1\n" }],
+    "hints": ["割り算の余りを求めます。", "余りには%を使います。"],
+    "solution": {
+      "code": "print(17 % 4)",
+      "explanation": "17を4で割った余りは1です。"
+    },
+    "explanationTrace": [
+      { "step": "求めるもの", "detail": "商ではなく余りです。" },
+      { "step": "演算を選ぶ", "detail": "余りを求める演算子は%です。" },
+      { "step": "確認", "detail": "17 = 4 * 4 + 1です。" }
+    ],
+    "commonMistakes": ["//で商の4を求める。"],
+    "reviewChecklist": [
+      { "id": "modulo", "label": "余りに%を使っている" },
+      { "id": "leftover", "label": "出力が1になっている" }
+    ]
+  },
+  {
+    "id": "store-a-score",
+    "slug": "store-a-score",
+    "lessonId": "values-and-variables",
+    "title": "得点に名前を付ける",
+    "level": 1,
+    "conceptIds": ["variable", "assignment", "print"],
+    "statement": "変数 `score` に整数 `75` を代入し、その変数を表示してください。",
+    "inputFormat": "入力はありません。",
+    "outputFormat": "`75` と表示します。",
+    "samples": [{ "input": "", "output": "75\n" }],
+    "hints": ["代入は `変数名 = 値` の形です。", "printにはscoreを渡します。"],
+    "solution": {
+      "code": "score = 75\nprint(score)",
+      "explanation": "75へscoreという名前を付け、その名前を使って表示します。"
+    },
+    "explanationTrace": [
+      { "step": "名前を確認", "detail": "指定された変数名はscoreです。" },
+      { "step": "代入する", "detail": "score = 75と書きます。" },
+      { "step": "参照する", "detail": "print(score)で値を使います。" }
+    ],
+    "commonMistakes": ["`print(\"score\")` と変数名そのものを文字列で表示する。"],
+    "reviewChecklist": [
+      { "id": "score-assignment", "label": "scoreへ75を代入している" },
+      { "id": "variable-output", "label": "引用符なしのscoreを表示している" }
+    ]
+  },
+  {
+    "id": "price-times-count",
+    "slug": "price-times-count",
+    "lessonId": "values-and-variables",
+    "title": "単価と個数",
+    "level": 2,
+    "conceptIds": ["variable", "assignment", "arithmetic-operator"],
+    "statement": "単価120、個数4をそれぞれ `price` と `count` に代入し、合計金額を表示してください。",
+    "inputFormat": "入力はありません。",
+    "outputFormat": "合計金額を表示します。",
+    "samples": [{ "input": "", "output": "480\n" }],
+    "hints": ["合計は単価×個数です。", "`price * count` を計算します。"],
+    "solution": {
+      "code": "price = 120\ncount = 4\ntotal = price * count\nprint(total)",
+      "explanation": "単価と個数を掛け、結果へtotalという名前を付けます。"
+    },
+    "explanationTrace": [
+      { "step": "値を分ける", "detail": "priceは120、countは4です。" },
+      { "step": "式にする", "detail": "合計はprice * countです。" },
+      { "step": "確認", "detail": "120 * 4 = 480です。" }
+    ],
+    "commonMistakes": ["単価と個数を足して124にする。"],
+    "reviewChecklist": [
+      { "id": "named-values", "label": "priceとcountを使っている" },
+      { "id": "total-formula", "label": "単価と個数を掛けている" }
+    ]
+  },
+  {
+    "id": "discounted-total",
+    "slug": "discounted-total",
+    "lessonId": "values-and-variables",
+    "title": "割引後の金額",
+    "level": 2,
+    "conceptIds": ["variable", "assignment", "arithmetic-operator"],
+    "statement": "元の金額800、割引額150を変数へ代入し、割引後の金額を表示してください。",
+    "inputFormat": "入力はありません。",
+    "outputFormat": "割引後の金額を表示します。",
+    "samples": [{ "input": "", "output": "650\n" }],
+    "hints": ["元の金額から割引額を引きます。", "途中結果をtotalへ代入できます。"],
+    "solution": {
+      "code": "price = 800\ndiscount = 150\ntotal = price - discount\nprint(total)",
+      "explanation": "800から150を引いた650を表示します。"
+    },
+    "explanationTrace": [
+      { "step": "値に名前を付ける", "detail": "元の金額と割引額を分けます。" },
+      { "step": "変化を読む", "detail": "割引なので引き算です。" },
+      { "step": "式にする", "detail": "price - discountを計算します。" }
+    ],
+    "commonMistakes": ["割引額を足して950にする。"],
+    "reviewChecklist": [
+      { "id": "discount-subtract", "label": "priceからdiscountを引いている" },
+      { "id": "correct-total", "label": "650を出力している" }
+    ]
+  },
+  {
+    "id": "join-code-parts",
+    "slug": "join-code-parts",
+    "lessonId": "values-and-variables",
+    "title": "文字列をつなぐ",
+    "level": 2,
+    "conceptIds": ["string", "arithmetic-operator", "variable"],
+    "statement": "変数 `left` に文字列 `PY`、`right` に文字列 `THON` を代入し、つないだ結果を表示してください。",
+    "inputFormat": "入力はありません。",
+    "outputFormat": "`PYTHON` と表示します。",
+    "samples": [{ "input": "", "output": "PYTHON\n" }],
+    "hints": ["文字列同士も+でつなげます。", "`left + right` を表示します。"],
+    "solution": {
+      "code": "left = \"PY\"\nright = \"THON\"\nprint(left + right)",
+      "explanation": "2つの文字列を+で連結します。"
+    },
+    "explanationTrace": [
+      { "step": "部分を確認", "detail": "前半はPY、後半はTHONです。" },
+      { "step": "順番を決める", "detail": "leftの後ろへrightをつなぎます。" },
+      { "step": "表示する", "detail": "left + rightをprintへ渡します。" }
+    ],
+    "commonMistakes": ["right + leftとしてTHONPYにする。"],
+    "reviewChecklist": [
+      { "id": "string-values", "label": "PYとTHONを引用符で囲んでいる" },
+      { "id": "join-order", "label": "left + rightの順になっている" }
+    ]
+  },
+  {
+    "id": "update-energy",
+    "slug": "update-energy",
+    "lessonId": "values-and-variables",
+    "title": "値を更新する",
+    "level": 2,
+    "conceptIds": ["variable", "assignment", "arithmetic-operator"],
+    "statement": "変数 `energy` を10で開始し、3を足した新しい値を同じ変数へ代入して表示してください。",
+    "inputFormat": "入力はありません。",
+    "outputFormat": "更新後の値を表示します。",
+    "samples": [{ "input": "", "output": "13\n" }],
+    "hints": ["右辺のenergyは更新前の10です。", "`energy = energy + 3` と書けます。"],
+    "solution": {
+      "code": "energy = 10\nenergy = energy + 3\nprint(energy)",
+      "explanation": "現在のenergyへ3を足し、その結果をenergyへ再代入します。"
+    },
+    "explanationTrace": [
+      { "step": "初期値", "detail": "energyは最初に10です。" },
+      { "step": "新しい値", "detail": "更新後は10 + 3です。" },
+      { "step": "再代入", "detail": "結果13を同じ名前へ結び直します。" }
+    ],
+    "commonMistakes": ["`energy + 3` だけを書き、結果を代入しない。"],
+    "reviewChecklist": [
+      { "id": "initial-energy", "label": "energyを10で開始している" },
+      { "id": "reassignment", "label": "計算結果をenergyへ再代入している" }
+    ]
+  }
+]

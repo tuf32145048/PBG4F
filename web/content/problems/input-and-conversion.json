@@ -1,0 +1,272 @@
+[
+  {
+    "id": "echo-name",
+    "slug": "echo-name",
+    "lessonId": "input-and-conversion",
+    "title": "名前をそのまま返す",
+    "level": 1,
+    "conceptIds": ["input", "string", "print", "standard-input"],
+    "statement": "1行で名前が入力されます。入力された名前をそのまま表示してください。",
+    "inputFormat": "1行に名前 `name` が入力されます。",
+    "outputFormat": "入力された名前を表示します。",
+    "samples": [{ "input": "Mika\n", "output": "Mika\n" }],
+    "hints": ["inputの結果を変数へ代入します。", "受け取った変数をprintします。"],
+    "solution": {
+      "code": "name = input()\nprint(name)",
+      "explanation": "inputで受け取った文字列を変更せず表示します。"
+    },
+    "explanationTrace": [
+      { "step": "入力を確認", "detail": "名前が文字列として1行届きます。" },
+      { "step": "処理を確認", "detail": "値を変更する必要はありません。" },
+      { "step": "出力する", "detail": "受け取ったnameを表示します。" }
+    ],
+    "commonMistakes": ["`print(\"name\")` と固定文字列を表示する。"],
+    "reviewChecklist": [
+      { "id": "read-input", "label": "inputを呼び出している" },
+      { "id": "print-variable", "label": "受け取った変数を表示している" }
+    ]
+  },
+  {
+    "id": "next-number",
+    "slug": "next-number",
+    "lessonId": "input-and-conversion",
+    "title": "次の整数",
+    "level": 1,
+    "conceptIds": ["input", "int", "type-conversion", "arithmetic-operator"],
+    "statement": "整数が1つ入力されます。その整数へ1を足した値を表示してください。",
+    "inputFormat": "1行に整数 `n` が入力されます。",
+    "outputFormat": "`n + 1` を表示します。",
+    "samples": [{ "input": "7\n", "output": "8\n" }],
+    "hints": ["inputの結果は文字列です。", "int(input())で整数として受け取れます。"],
+    "solution": {
+      "code": "n = int(input())\nprint(n + 1)",
+      "explanation": "入力を整数へ変換してから1を足します。"
+    },
+    "explanationTrace": [
+      { "step": "入力の型", "detail": "inputは文字列を返します。" },
+      { "step": "変換する", "detail": "計算前にintへ変換します。" },
+      { "step": "計算する", "detail": "n + 1を表示します。" }
+    ],
+    "commonMistakes": ["intへ変換せず、文字列へ1を足そうとする。"],
+    "reviewChecklist": [
+      { "id": "convert-int", "label": "入力をintへ変換している" },
+      { "id": "add-one", "label": "変換後の値へ1を足している" }
+    ]
+  },
+  {
+    "id": "double-input",
+    "slug": "double-input",
+    "lessonId": "input-and-conversion",
+    "title": "入力を2倍",
+    "level": 1,
+    "conceptIds": ["input", "int", "arithmetic-operator"],
+    "statement": "整数が1つ入力されます。その2倍を表示してください。",
+    "inputFormat": "1行に整数 `n` が入力されます。",
+    "outputFormat": "`n` の2倍を表示します。",
+    "samples": [{ "input": "9\n", "output": "18\n" }],
+    "hints": ["入力を整数へ変換します。", "2倍はn * 2です。"],
+    "solution": {
+      "code": "n = int(input())\nprint(n * 2)",
+      "explanation": "整数として受け取り、2を掛けます。"
+    },
+    "explanationTrace": [
+      { "step": "受け取る", "detail": "inputで1行を読みます。" },
+      { "step": "数値にする", "detail": "intで整数へ変換します。" },
+      { "step": "2倍する", "detail": "n * 2を計算します。" }
+    ],
+    "commonMistakes": ["文字列のまま2倍し、`99`と表示する。"],
+    "reviewChecklist": [
+      { "id": "numeric-input", "label": "入力を整数として扱っている" },
+      { "id": "multiply-two", "label": "2倍に*を使っている" }
+    ]
+  },
+  {
+    "id": "sum-two-lines",
+    "slug": "sum-two-lines",
+    "lessonId": "input-and-conversion",
+    "title": "2行の整数を足す",
+    "level": 2,
+    "conceptIds": ["input", "int", "variable", "arithmetic-operator"],
+    "statement": "2つの整数が1行ずつ入力されます。合計を表示してください。",
+    "inputFormat": "1行目に整数 `a`、2行目に整数 `b` が入力されます。",
+    "outputFormat": "`a + b` を表示します。",
+    "samples": [{ "input": "4\n11\n", "output": "15\n" }],
+    "hints": ["inputを2回呼び出します。", "aとbをそれぞれintへ変換します。"],
+    "solution": {
+      "code": "a = int(input())\nb = int(input())\nprint(a + b)",
+      "explanation": "2行を別々に整数として受け取り、足し算します。"
+    },
+    "explanationTrace": [
+      { "step": "行数を確認", "detail": "入力は2行あります。" },
+      { "step": "別々に受け取る", "detail": "aとbへ1行ずつ代入します。" },
+      { "step": "合計する", "detail": "a + bを表示します。" }
+    ],
+    "commonMistakes": ["inputを1回しか呼ばず、片方の値を読まない。"],
+    "reviewChecklist": [
+      { "id": "two-inputs", "label": "inputを2回呼び出している" },
+      { "id": "both-int", "label": "両方をintへ変換している" }
+    ]
+  },
+  {
+    "id": "decorate-word",
+    "slug": "decorate-word",
+    "lessonId": "input-and-conversion",
+    "title": "文字列を記号で囲む",
+    "level": 2,
+    "conceptIds": ["input", "string", "arithmetic-operator"],
+    "statement": "1行で単語が入力されます。その単語の前後へ `*` を1つずつ付けて表示してください。",
+    "inputFormat": "1行に文字列 `word` が入力されます。",
+    "outputFormat": "`*word*` の形で表示します。",
+    "samples": [{ "input": "CODE\n", "output": "*CODE*\n" }],
+    "hints": ["入力はそのまま文字列として使えます。", "`\"*\" + word + \"*\"` とつなげます。"],
+    "solution": {
+      "code": "word = input()\nprint(\"*\" + word + \"*\")",
+      "explanation": "入力文字列の左右へ固定の文字列*を連結します。"
+    },
+    "explanationTrace": [
+      { "step": "部分に分ける", "detail": "出力は*、word、*の3部分です。" },
+      { "step": "順番を決める", "detail": "入力は中央に置きます。" },
+      { "step": "連結する", "detail": "+で3つの文字列をつなぎます。" }
+    ],
+    "commonMistakes": ["単語そのものを引用符で囲み、入力を使わない。"],
+    "reviewChecklist": [
+      { "id": "use-word", "label": "入力されたwordを使っている" },
+      { "id": "both-stars", "label": "前後に*を付けている" }
+    ]
+  },
+  {
+    "id": "minutes-to-seconds",
+    "slug": "minutes-to-seconds",
+    "lessonId": "input-and-conversion",
+    "title": "分を秒へ変換",
+    "level": 2,
+    "conceptIds": ["input", "int", "type-conversion", "arithmetic-operator"],
+    "statement": "分を表す整数が入力されます。秒へ変換して表示してください。",
+    "inputFormat": "1行に分 `minutes` が整数で入力されます。",
+    "outputFormat": "秒数を表示します。",
+    "samples": [{ "input": "3\n", "output": "180\n" }],
+    "hints": ["1分は60秒です。", "minutes * 60を計算します。"],
+    "solution": {
+      "code": "minutes = int(input())\nseconds = minutes * 60\nprint(seconds)",
+      "explanation": "入力した分へ60を掛けて秒へ変換します。"
+    },
+    "explanationTrace": [
+      { "step": "単位を確認", "detail": "入力は分、出力は秒です。" },
+      { "step": "対応を使う", "detail": "1分 = 60秒です。" },
+      { "step": "式にする", "detail": "minutes * 60を計算します。" }
+    ],
+    "commonMistakes": ["60で割ってしまう。"],
+    "reviewChecklist": [
+      { "id": "minutes-int", "label": "minutesを整数として受け取っている" },
+      { "id": "times-sixty", "label": "60を掛けている" }
+    ]
+  },
+  {
+    "id": "triple-price",
+    "slug": "triple-price",
+    "lessonId": "input-and-conversion",
+    "title": "3個分の価格",
+    "level": 2,
+    "conceptIds": ["input", "int", "variable", "arithmetic-operator"],
+    "statement": "商品の単価が整数で入力されます。3個買った合計金額を表示してください。",
+    "inputFormat": "1行に単価 `price` が入力されます。",
+    "outputFormat": "3個分の合計金額を表示します。",
+    "samples": [{ "input": "120\n", "output": "360\n" }],
+    "hints": ["単価をintで受け取ります。", "個数3を掛けます。"],
+    "solution": {
+      "code": "price = int(input())\ntotal = price * 3\nprint(total)",
+      "explanation": "入力された単価を3倍します。"
+    },
+    "explanationTrace": [
+      { "step": "入力を確認", "detail": "与えられるのは1個の価格です。" },
+      { "step": "求める量", "detail": "必要なのは3個分です。" },
+      { "step": "掛ける", "detail": "price * 3を表示します。" }
+    ],
+    "commonMistakes": ["price + 3として個数を足す。"],
+    "reviewChecklist": [
+      { "id": "price-int", "label": "priceをintへ変換している" },
+      { "id": "three-items", "label": "単価を3倍している" }
+    ]
+  },
+  {
+    "id": "score-label",
+    "slug": "score-label",
+    "lessonId": "input-and-conversion",
+    "title": "得点ラベル",
+    "level": 2,
+    "conceptIds": ["input", "int", "str", "type-conversion", "string"],
+    "statement": "整数の得点が入力されます。`SCORE:` の直後へ得点を続けて表示してください。空白は入れません。",
+    "inputFormat": "1行に整数 `score` が入力されます。",
+    "outputFormat": "`SCORE:score` の形で表示します。",
+    "samples": [{ "input": "80\n", "output": "SCORE:80\n" }],
+    "hints": ["文字列同士を+でつなぎます。", "整数scoreをstrで文字列へ変換します。"],
+    "solution": {
+      "code": "score = int(input())\nmessage = \"SCORE:\" + str(score)\nprint(message)",
+      "explanation": "整数をstrで文字列へ変換し、固定文字列と連結します。"
+    },
+    "explanationTrace": [
+      { "step": "出力を分ける", "detail": "SCORE:と入力値の2部分です。" },
+      { "step": "型をそろえる", "detail": "+で連結するためscoreをstrへ変換します。" },
+      { "step": "連結する", "detail": "空白を加えず表示します。" }
+    ],
+    "commonMistakes": ["文字列と整数をそのまま+でつなぐ。"],
+    "reviewChecklist": [
+      { "id": "score-string", "label": "連結前にscoreをstrへ変換している" },
+      { "id": "no-label-space", "label": "コロンの後ろに空白を入れていない" }
+    ]
+  },
+  {
+    "id": "previous-and-next",
+    "slug": "previous-and-next",
+    "lessonId": "input-and-conversion",
+    "title": "前後の整数",
+    "level": 2,
+    "conceptIds": ["input", "int", "arithmetic-operator", "standard-output"],
+    "statement": "整数が1つ入力されます。1行目に1小さい整数、2行目に1大きい整数を表示してください。",
+    "inputFormat": "1行に整数 `n` が入力されます。",
+    "outputFormat": "1行目に `n - 1`、2行目に `n + 1` を表示します。",
+    "samples": [{ "input": "10\n", "output": "9\n11\n" }],
+    "hints": ["入力は1回だけです。", "printを2回使い、n - 1とn + 1を順に表示します。"],
+    "solution": {
+      "code": "n = int(input())\nprint(n - 1)\nprint(n + 1)",
+      "explanation": "同じ入力値を2つの計算で再利用します。"
+    },
+    "explanationTrace": [
+      { "step": "出力行を確認", "detail": "結果は2行必要です。" },
+      { "step": "式を分ける", "detail": "前はn - 1、次はn + 1です。" },
+      { "step": "順に表示", "detail": "小さい値を先にprintします。" }
+    ],
+    "commonMistakes": ["n自体を書き換え、2行目の計算元を変えてしまう。"],
+    "reviewChecklist": [
+      { "id": "reuse-n", "label": "同じnを2つの式で使っている" },
+      { "id": "output-order", "label": "小さい値、大きい値の順で出力している" }
+    ]
+  },
+  {
+    "id": "increase-level",
+    "slug": "increase-level",
+    "lessonId": "input-and-conversion",
+    "title": "レベルを更新",
+    "level": 2,
+    "conceptIds": ["input", "int", "variable", "assignment", "arithmetic-operator"],
+    "statement": "現在のレベルが整数で入力されます。レベルを2増やして同じ変数へ再代入し、更新後の値を表示してください。",
+    "inputFormat": "1行に整数 `level` が入力されます。",
+    "outputFormat": "更新後のレベルを表示します。",
+    "samples": [{ "input": "5\n", "output": "7\n" }],
+    "hints": ["levelをintで受け取ります。", "`level = level + 2` と更新できます。"],
+    "solution": {
+      "code": "level = int(input())\nlevel = level + 2\nprint(level)",
+      "explanation": "入力値へ2を足し、同じ変数へ再代入します。"
+    },
+    "explanationTrace": [
+      { "step": "現在値", "detail": "levelは入力から決まります。" },
+      { "step": "更新式", "detail": "新しい値はlevel + 2です。" },
+      { "step": "再代入", "detail": "計算結果をlevelへ結び直して表示します。" }
+    ],
+    "commonMistakes": ["2を足した式を作るだけで、levelへ再代入しない。"],
+    "reviewChecklist": [
+      { "id": "level-int", "label": "入力を整数へ変換している" },
+      { "id": "level-update", "label": "levelへ計算結果を再代入している" }
+    ]
+  }
+]

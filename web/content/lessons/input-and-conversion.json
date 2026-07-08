@@ -1,0 +1,29 @@
+{
+  "id": "input-and-conversion",
+  "slug": "input-and-conversion",
+  "order": 2,
+  "title": "入力と型変換",
+  "summary": "外から受け取った文字列を、目的に合う種類へ変換して使います。",
+  "objectives": [
+    "inputで1行の入力を受け取れる",
+    "入力が最初は文字列であることを説明できる",
+    "intとstrを使って値の種類を変換できる"
+  ],
+  "prerequisiteIds": ["values-and-variables"],
+  "termIds": [
+    "input",
+    "int",
+    "str",
+    "type-conversion",
+    "standard-input",
+    "standard-output",
+    "string",
+    "number",
+    "variable"
+  ],
+  "tipIds": [
+    "input-starts-as-text",
+    "output-is-a-contract",
+    "separate-steps"
+  ]
+}

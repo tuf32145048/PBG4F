@@ -1,0 +1,23 @@
+{
+  "id": "values-and-variables",
+  "slug": "values-and-variables",
+  "order": 1,
+  "title": "値・変数・演算",
+  "summary": "数値と文字列を区別し、値に名前を付けて計算します。",
+  "objectives": [
+    "数値と文字列の違いを説明できる",
+    "変数へ値を代入して再利用できる",
+    "四則演算を組み合わせて結果を表示できる"
+  ],
+  "prerequisiteIds": ["getting-started"],
+  "termIds": [
+    "value",
+    "number",
+    "string",
+    "variable",
+    "assignment",
+    "arithmetic-operator",
+    "print"
+  ],
+  "tipIds": ["names-are-labels", "output-is-a-contract"]
+}

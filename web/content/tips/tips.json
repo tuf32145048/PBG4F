@@ -1,0 +1,41 @@
+[
+  {
+    "id": "errors-are-clues",
+    "title": "エラー文はコンピュータからの報告",
+    "body": "エラーは評価ではなく、処理を続けられなかった場所と理由の報告です。まず最後の行、エラー名、行番号の順に見ます。",
+    "lessonIds": ["getting-started"],
+    "termIds": ["error-message"]
+  },
+  {
+    "id": "names-are-labels",
+    "title": "変数名は中身を説明するラベル",
+    "body": "短い名前が常に良いわけではありません。priceやcountのように役割が伝わる名前を使うと、式を日本語に戻して確認しやすくなります。",
+    "lessonIds": ["values-and-variables"],
+    "termIds": ["variable", "assignment"]
+  },
+  {
+    "id": "input-starts-as-text",
+    "title": "入力は最初に文字列として届く",
+    "body": "キーボードから3と入力しても、inputが返す値は文字列です。計算前にintへ変換する習慣を付けます。",
+    "lessonIds": ["input-and-conversion"],
+    "termIds": ["input", "string", "int", "type-conversion"]
+  },
+  {
+    "id": "output-is-a-contract",
+    "title": "出力形式も答えの一部",
+    "body": "計算結果が正しくても、余計な説明や空白があると期待結果と一致しません。何を、どの順番で、どの記号を含めて表示するか確認します。",
+    "lessonIds": [
+      "getting-started",
+      "values-and-variables",
+      "input-and-conversion"
+    ],
+    "termIds": ["print", "standard-output"]
+  },
+  {
+    "id": "separate-steps",
+    "title": "分からないときは処理を分ける",
+    "body": "入力、変換、計算、出力を別の行へ分けると、どこまで正しく動いているか確認しやすくなります。",
+    "lessonIds": ["input-and-conversion"],
+    "termIds": ["input", "type-conversion", "print", "variable"]
+  }
+]

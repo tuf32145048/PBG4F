@@ -13,12 +13,12 @@
     "hints": ["入力を2回受け取り、それぞれ整数へ変換します。", "等しいか調べるには `==` を使います。"],
     "solution": {
       "code": "a = int(input())\nb = int(input())\nprint(a == b)",
-      "explanation": "`==` は2つの値が等しいかを調べ、結果としてTrueまたはFalseを作ります。"
+      "explanation": "`==` は2つの値が等しいかを調べ、結果として真偽値を作ります。"
     },
     "explanationTrace": [
       { "step": "入力を読む", "detail": "整数が2行で届きます。" },
       { "step": "比べる対象", "detail": "aとbを比べます。" },
-      { "step": "条件にする", "detail": "等しいかどうかはa == bで表せます。" },
+      { "step": "条件式にする", "detail": "等しいかどうかはa == bで表せます。" },
       { "step": "結果を表示", "detail": "比較結果をそのままprintします。" }
     ],
     "commonMistakes": ["`a = b` と書いて、比較ではなく代入にしてしまう。"],
@@ -41,7 +41,7 @@
     "hints": ["等しくないことを調べる比較演算子があります。", "`!=` は「等しくない」を表します。"],
     "solution": {
       "code": "a = int(input())\nb = int(input())\nprint(a != b)",
-      "explanation": "`!=` を使うと、2つの値が違うかどうかをTrueまたはFalseで表せます。"
+      "explanation": "`!=` を使うと、2つの値が違うかどうかを真偽値で表せます。"
     },
     "explanationTrace": [
       { "step": "入力を読む", "detail": "aとbの2つの整数があります。" },
@@ -181,7 +181,7 @@
     "explanationTrace": [
       { "step": "条件を確認", "detail": "満点は100点ちょうどです。" },
       { "step": "比較を選ぶ", "detail": "ちょうど等しいかを見るので==です。" },
-      { "step": "表示する", "detail": "TrueまたはFalseを表示します。" }
+      { "step": "表示する", "detail": "真偽値を表示します。" }
     ],
     "commonMistakes": ["`score >= 100` と書き、100を超える値もTrueにしてしまう。"],
     "reviewChecklist": [
@@ -242,7 +242,7 @@
     "explanationTrace": [
       { "step": "入力を読む", "detail": "単価と個数が別々に入力されます。" },
       { "step": "先に計算する", "detail": "合計金額はprice * countです。" },
-      { "step": "比較する", "detail": "total >= 1000で条件を作ります。" },
+      { "step": "比較する", "detail": "total >= 1000で条件式を作ります。" },
       { "step": "表示する", "detail": "条件式の結果を表示します。" }
     ],
     "commonMistakes": ["priceだけを1000と比較し、個数を使わない。"],
@@ -277,7 +277,7 @@
     "explanationTrace": [
       { "step": "入力の役割", "detail": "2つの点数と目標点があります。" },
       { "step": "必要な値を作る", "detail": "比較前に合計点totalを計算します。" },
-      { "step": "条件にする", "detail": "total >= targetで目標以上かを表します。" },
+      { "step": "条件式にする", "detail": "total >= targetで目標以上かを表します。" },
       { "step": "結果を表示", "detail": "比較結果をprintします。" }
     ],
     "commonMistakes": ["japaneseだけ、またはmathだけをtargetと比較してしまう。"],

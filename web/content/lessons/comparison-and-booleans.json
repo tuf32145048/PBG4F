@@ -3,10 +3,10 @@
   "slug": "comparison-and-booleans",
   "order": 3,
   "title": "比較と真偽値",
-  "summary": "値を比べて、条件が成り立つかをTrueまたはFalseで表します。",
+  "summary": "値を比べて条件式を作り、結果を真偽値として表します。",
   "objectives": [
     "比較演算子を使って2つの値を比べられる",
-    "比較の結果がTrueまたはFalseになることを説明できる",
+    "比較の結果が真偽値になることを説明できる",
     "代入の=と比較の==を区別できる"
   ],
   "prerequisiteIds": ["input-and-conversion"],

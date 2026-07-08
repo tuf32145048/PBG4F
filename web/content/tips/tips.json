@@ -16,7 +16,7 @@
   {
     "id": "input-starts-as-text",
     "title": "入力は最初に文字列として届く",
-    "body": "キーボードから3と入力しても、inputが返す値は文字列です。計算前にint()へ変換する習慣を付けます。",
+    "body": "キーボードから3と入力しても、input()が返す値は文字列です。計算前にint()へ変換する習慣を付けます。",
     "lessonIds": ["input-and-conversion"],
     "termIds": ["input-concept", "input", "string", "int", "type-conversion"]
   },
@@ -68,14 +68,14 @@
   {
     "id": "indentation-defines-block",
     "title": "インデントは処理範囲を決める",
-    "body": "Pythonではインデントされた行だけがifの中身になります。条件に関係なく実行したい処理は、ifの外へ戻して書きます。",
+    "body": "Pythonではインデントされた行だけがif文の中身になります。条件式の結果に関係なく実行したい処理は、if文の外へ戻して書きます。",
     "lessonIds": ["if-statements"],
     "termIds": ["indentation", "block", "if-statement"]
   },
   {
     "id": "test-each-branch",
     "title": "分岐ごとに入力例を試す",
-    "body": "条件分岐を書いたら、if側、elif側、else側に入る入力をそれぞれ考えると、境界の間違いを見つけやすくなります。",
+    "body": "条件分岐を書いたら、if文のブロック、elifのブロック、elseのブロックに入る入力をそれぞれ考えると、境界の間違いを見つけやすくなります。",
     "lessonIds": ["if-statements"],
     "termIds": ["if-statement", "elif-clause", "else-clause", "condition-expression"]
   }

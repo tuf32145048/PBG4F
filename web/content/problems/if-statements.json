@@ -8,20 +8,20 @@
     "conceptIds": ["input", "int", "condition-expression", "comparison-operator", "if-statement", "else-clause"],
     "statement": "得点が1つ入力されます。60点以上なら `PASS`、60点未満なら `RETRY` と表示してください。",
     "inputFormat": "1行に整数 `score` が入力されます。",
-    "outputFormat": "条件に応じて `PASS` または `RETRY` を表示します。",
+    "outputFormat": "条件式の結果に応じて `PASS` または `RETRY` を表示します。",
     "samples": [{ "input": "72\n", "output": "PASS\n" }],
-    "hints": ["まずscore >= 60という条件を作ります。", "True側をif、False側をelseに書きます。"],
+    "hints": ["まずscore >= 60という条件式を書きます。", "Trueのときの処理をif文のブロック、Falseのときの処理をelseのブロックに書きます。"],
     "solution": {
       "code": "score = int(input())\n\nif score >= 60:\n    print(\"PASS\")\nelse:\n    print(\"RETRY\")",
-      "explanation": "scoreが60以上ならifのブロック、それ以外ならelseのブロックが実行されます。"
+      "explanation": "scoreが60以上ならif文のブロック、それ以外ならelseのブロックが実行されます。"
     },
     "explanationTrace": [
       { "step": "入力を読む", "detail": "得点scoreを整数として受け取ります。" },
-      { "step": "条件を作る", "detail": "合格条件はscore >= 60です。" },
+      { "step": "条件式を書く", "detail": "合格条件をscore >= 60という条件式で表します。" },
       { "step": "分岐を書く", "detail": "if側にPASS、else側にRETRYを書きます。" },
       { "step": "出力を確認", "detail": "どちらか一方だけが表示されます。" }
     ],
-    "commonMistakes": ["else側にも条件を書こうとして、構文を崩してしまう。"],
+    "commonMistakes": ["elseにも条件式を書こうとして、構文を崩してしまう。"],
     "reviewChecklist": [
       { "id": "has-if-else", "label": "ifとelseの両方がある" },
       { "id": "pass-threshold", "label": "60点ちょうどをPASSにしている" }
@@ -36,9 +36,9 @@
     "conceptIds": ["input", "int", "condition-expression", "if-statement", "else-clause"],
     "statement": "整数が1つ入力されます。0より大きければ `POSITIVE`、0以下なら `NOT POSITIVE` と表示してください。",
     "inputFormat": "1行に整数 `n` が入力されます。",
-    "outputFormat": "条件に応じて `POSITIVE` または `NOT POSITIVE` を表示します。",
+    "outputFormat": "条件式の結果に応じて `POSITIVE` または `NOT POSITIVE` を表示します。",
     "samples": [{ "input": "-2\n", "output": "NOT POSITIVE\n" }],
-    "hints": ["0より大きい条件はn > 0です。", "0は正の数ではないのでelse側に入ります。"],
+    "hints": ["0より大きい条件はn > 0という条件式で表せます。", "0は正の数ではないのでelse側に入ります。"],
     "solution": {
       "code": "n = int(input())\n\nif n > 0:\n    print(\"POSITIVE\")\nelse:\n    print(\"NOT POSITIVE\")",
       "explanation": "n > 0がTrueならPOSITIVE、FalseならNOT POSITIVEを表示します。"
@@ -46,7 +46,7 @@
     "explanationTrace": [
       { "step": "境界を確認", "detail": "境界は0です。" },
       { "step": "0を含むか確認", "detail": "0より大きいので0は含みません。" },
-      { "step": "分岐する", "detail": "n > 0をifの条件にします。" }
+      { "step": "分岐する", "detail": "n > 0をif文の条件式にします。" }
     ],
     "commonMistakes": ["n >= 0として、0をPOSITIVEにしてしまう。"],
     "reviewChecklist": [
@@ -63,16 +63,16 @@
     "conceptIds": ["input", "string", "condition-expression", "comparison-operator", "if-statement", "else-clause"],
     "statement": "1行で合い言葉が入力されます。合い言葉が `python` と等しければ `OK`、違えば `NG` と表示してください。",
     "inputFormat": "1行に文字列 `word` が入力されます。",
-    "outputFormat": "条件に応じて `OK` または `NG` を表示します。",
+    "outputFormat": "条件式の結果に応じて `OK` または `NG` を表示します。",
     "samples": [{ "input": "python\n", "output": "OK\n" }],
-    "hints": ["文字列はint()へ変換しません。", "word == \"python\" を条件にできます。"],
+    "hints": ["文字列はint()へ変換しません。", "word == \"python\" を条件式にできます。"],
     "solution": {
       "code": "word = input()\n\nif word == \"python\":\n    print(\"OK\")\nelse:\n    print(\"NG\")",
       "explanation": "入力文字列がpythonと一致するかを比較し、結果に応じて表示を選びます。"
     },
     "explanationTrace": [
       { "step": "入力の種類", "detail": "合い言葉は文字列です。" },
-      { "step": "条件を書く", "detail": "word == \"python\"で一致を調べます。" },
+      { "step": "条件式を書く", "detail": "word == \"python\"で一致を調べます。" },
       { "step": "出力を分ける", "detail": "一致ならOK、違えばNGです。" }
     ],
     "commonMistakes": ["`word = \"python\"` と書き、比較ではなく代入にしてしまう。"],
@@ -90,9 +90,9 @@
     "conceptIds": ["input", "int", "condition-expression", "comparison-operator", "if-statement", "else-clause"],
     "statement": "年齢が整数で入力されます。18歳以上なら `ADULT`、18歳未満なら `CHILD` と表示してください。",
     "inputFormat": "1行に整数 `age` が入力されます。",
-    "outputFormat": "条件に応じて `ADULT` または `CHILD` を表示します。",
+    "outputFormat": "条件式の結果に応じて `ADULT` または `CHILD` を表示します。",
     "samples": [{ "input": "18\n", "output": "ADULT\n" }],
-    "hints": ["18歳以上は18を含みます。", "age >= 18をifの条件にします。"],
+    "hints": ["18歳以上は18を含みます。", "age >= 18をif文の条件式にします。"],
     "solution": {
       "code": "age = int(input())\n\nif age >= 18:\n    print(\"ADULT\")\nelse:\n    print(\"CHILD\")",
       "explanation": "ageが18以上ならADULT、それ以外ならCHILDを表示します。"
@@ -100,7 +100,7 @@
     "explanationTrace": [
       { "step": "境界を読む", "detail": "境界は18歳です。" },
       { "step": "含むか確認", "detail": "18歳以上なので18も含みます。" },
-      { "step": "ifを書く", "detail": "age >= 18を条件にします。" }
+      { "step": "if文を書く", "detail": "age >= 18を条件式にします。" }
     ],
     "commonMistakes": ["age > 18として、18歳をCHILDにしてしまう。"],
     "reviewChecklist": [
@@ -119,14 +119,14 @@
     "inputFormat": "1行に整数 `price` が入力されます。",
     "outputFormat": "割引後の金額を表示します。",
     "samples": [{ "input": "1200\n", "output": "1100\n" }],
-    "hints": ["割引する条件はprice >= 1000です。", "if側でprice - 100、else側でpriceを表示します。"],
+    "hints": ["割引する条件はprice >= 1000という条件式で表せます。", "if文のブロックでprice - 100、elseのブロックでpriceを表示します。"],
     "solution": {
       "code": "price = int(input())\n\nif price >= 1000:\n    print(price - 100)\nelse:\n    print(price)",
       "explanation": "1000円以上のときだけ100を引き、それ以外は入力された価格をそのまま出力します。"
     },
     "explanationTrace": [
       { "step": "入力を読む", "detail": "priceは商品の価格です。" },
-      { "step": "条件を決める", "detail": "割引対象は1000円以上です。" },
+      { "step": "条件を決める", "detail": "割引対象は1000円以上で、条件式はprice >= 1000です。" },
       { "step": "出力を分ける", "detail": "割引ありと割引なしで表示する値を変えます。" }
     ],
     "commonMistakes": ["1000円未満の場合にも100円引いてしまう。"],
@@ -153,8 +153,8 @@
     },
     "explanationTrace": [
       { "step": "入力を読む", "detail": "aとbの2つの整数があります。" },
-      { "step": "条件を作る", "detail": "aがb以上かを調べます。" },
-      { "step": "表示を選ぶ", "detail": "条件がTrueならa、Falseならbを表示します。" }
+      { "step": "条件式を書く", "detail": "aがb以上かを調べます。" },
+      { "step": "表示を選ぶ", "detail": "条件式がTrueならa、Falseならbを表示します。" }
     ],
     "commonMistakes": ["小さい方を表示する条件にしてしまう。"],
     "reviewChecklist": [
@@ -171,17 +171,17 @@
     "conceptIds": ["input", "int", "condition-expression", "if-statement", "elif-clause", "else-clause"],
     "statement": "気温が整数で入力されます。0度以下なら `FREEZING`、1度以上29度以下なら `NORMAL`、30度以上なら `HOT` と表示してください。",
     "inputFormat": "1行に整数 `temperature` が入力されます。",
-    "outputFormat": "条件に応じて `FREEZING`、`NORMAL`、`HOT` のいずれかを表示します。",
+    "outputFormat": "条件式の結果に応じて `FREEZING`、`NORMAL`、`HOT` のいずれかを表示します。",
     "samples": [{ "input": "30\n", "output": "HOT\n" }],
     "hints": ["まず0度以下かを調べます。", "次に30度未満かを調べれば、残りは30度以上です。"],
     "solution": {
       "code": "temperature = int(input())\n\nif temperature <= 0:\n    print(\"FREEZING\")\nelif temperature < 30:\n    print(\"NORMAL\")\nelse:\n    print(\"HOT\")",
-      "explanation": "条件を上から順に調べます。0度以下でなく、30度未満なら1度以上29度以下です。"
+      "explanation": "条件式を上から順に調べます。0度以下でなく、30度未満なら1度以上29度以下です。"
     },
     "explanationTrace": [
       { "step": "範囲を分ける", "detail": "0以下、1から29、30以上の3つです。" },
       { "step": "上から判定", "detail": "まずtemperature <= 0を調べます。" },
-      { "step": "次の条件", "detail": "0以下でない前提でtemperature < 30を調べます。" },
+      { "step": "次の条件式", "detail": "0以下でない前提でtemperature < 30を調べます。" },
       { "step": "残りをelseへ", "detail": "どちらでもなければ30以上です。" }
     ],
     "commonMistakes": ["temperature <= 30として、30度をNORMALにしてしまう。"],
@@ -199,12 +199,12 @@
     "conceptIds": ["input", "int", "condition-expression", "if-statement", "elif-clause", "else-clause"],
     "statement": "得点が整数で入力されます。80点以上なら `A`、60点以上80点未満なら `B`、60点未満なら `C` と表示してください。",
     "inputFormat": "1行に整数 `score` が入力されます。",
-    "outputFormat": "条件に応じて `A`、`B`、`C` のいずれかを表示します。",
+    "outputFormat": "条件式の結果に応じて `A`、`B`、`C` のいずれかを表示します。",
     "samples": [{ "input": "75\n", "output": "B\n" }],
     "hints": ["厳しい条件である80点以上を先に調べます。", "次に60点以上を調べると、80点未満であることは上の条件で除かれています。"],
     "solution": {
       "code": "score = int(input())\n\nif score >= 80:\n    print(\"A\")\nelif score >= 60:\n    print(\"B\")\nelse:\n    print(\"C\")",
-      "explanation": "条件は上から順に判定されます。80点以上を先に調べることで、AとBを正しく分けられます。"
+      "explanation": "条件式は上から順に判定されます。80点以上を先に調べることで、AとBを正しく分けられます。"
     },
     "explanationTrace": [
       { "step": "ランクを読む", "detail": "A、B、Cの3つに分けます。" },
@@ -229,7 +229,7 @@
     "inputFormat": "1行に整数 `total` が入力されます。",
     "outputFormat": "送料を整数で表示します。",
     "samples": [{ "input": "2500\n", "output": "300\n" }],
-    "hints": ["高い金額の条件から調べると整理しやすいです。", "3000円以上でなかった場合だけ、1000円以上かを調べます。"],
+    "hints": ["高い金額の範囲から調べると整理しやすいです。", "3000円以上でなかった場合だけ、1000円以上かを調べます。"],
     "solution": {
       "code": "total = int(input())\n\nif total >= 3000:\n    print(0)\nelif total >= 1000:\n    print(300)\nelse:\n    print(600)",
       "explanation": "3000円以上を先に判定し、それ以外の中から1000円以上を判定します。残りは1000円未満です。"
@@ -237,7 +237,7 @@
     "explanationTrace": [
       { "step": "範囲を読む", "detail": "送料は3段階です。" },
       { "step": "順序を決める", "detail": "3000円以上を先に調べます。" },
-      { "step": "次の条件", "detail": "3000円未満の中で1000円以上かを調べます。" },
+      { "step": "次の条件式", "detail": "3000円未満の中で1000円以上かを調べます。" },
       { "step": "残り", "detail": "どちらでもなければ1000円未満です。" }
     ],
     "commonMistakes": ["1000円以上を先に書き、3000円以上でも300円にしてしまう。"],
@@ -260,7 +260,7 @@
     "hints": ["年齢の小さい範囲から順に調べると書きやすいです。", "age < 6、age < 18、age < 65の順に調べます。"],
     "solution": {
       "code": "age = int(input())\n\nif age < 6:\n    print(0)\nelif age < 18:\n    print(500)\nelif age < 65:\n    print(1000)\nelse:\n    print(700)",
-      "explanation": "条件を小さい年齢から順に調べます。前の条件で外れた範囲は、次の条件では考えなくてよくなります。"
+      "explanation": "条件式を小さい年齢から順に調べます。前の条件式で外れた範囲は、次の条件式では考えなくてよくなります。"
     },
     "explanationTrace": [
       { "step": "範囲を読む", "detail": "料金は年齢で4つに分かれます。" },

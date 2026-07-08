@@ -1,15 +1,15 @@
 # 比較と真偽値
 
-これまでは、入力された値を計算して表示してきました。この章では、値を比べて「条件が成り立つか」を調べます。
+これまでは、入力された値を計算して表示してきました。この章では、値を比べて判断の基準を作ります。この基準を[条件](term:condition)と呼びます。
 
-## 比べるとTrueまたはFalseになる
+## 比べると真偽値になる
 
 ```python
 age = 20
 print(age >= 18)
 ```
 
-[比較演算子](term:comparison-operator)を使うと、2つの値を比べられます。比較の結果は [TrueまたはFalse](term:boolean) です。
+[比較演算子](term:comparison-operator)を使うと、2つの値を比べられます。比較の結果は、`True` または `False` という[真偽値](term:boolean)です。
 
 ```text
 True
@@ -53,7 +53,7 @@ print(score == 100)
 
 ## 条件式として読む
 
-比較を使った式は [条件式](term:condition-expression) として読めます。
+比較を使って `True` または `False` になる[式](term:expression)は、[条件式](term:condition-expression)として読めます。
 
 ```python
 price = 800
@@ -61,7 +61,7 @@ money = 1000
 print(money >= price)
 ```
 
-この式は「moneyはprice以上ですか」と読めます。問題文を読んだら、まず日本語の条件を作り、それを比較式へ直します。
+この条件式は「moneyはprice以上ですか」と読めます。問題文を読んだら、まず日本語の条件を作り、それを条件式へ直します。
 
 1. 何と何を比べるか
 2. 等しい、違う、大きい、小さい、以上、以下のどれか

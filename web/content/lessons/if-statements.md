@@ -1,6 +1,6 @@
 # 条件分岐
 
-前の章では、比較の結果を `True` または `False` として表示しました。この章では、その結果を使って実行する処理を選びます。
+前の章では、条件を条件式として書き、その結果を `True` または `False` の真偽値として表示しました。この章では、その真偽値を使って実行する処理を選びます。この考え方を[条件分岐](term:conditional-branching)と呼びます。
 
 ## Trueのときだけ実行する
 
@@ -11,9 +11,9 @@ if score >= 60:
     print("PASS")
 ```
 
-[if文](term:if-statement)は、[条件式](term:condition-expression)が `True` のときだけ、内側の処理を実行します。
+[if文](term:if-statement)は、[条件式](term:condition-expression)が `True` のときだけ、内側の処理を実行するためのPythonの文です。
 
-`score >= 60` は「scoreは60以上ですか」という質問です。答えが `True` なら `print("PASS")` が動きます。`False` なら、その行は実行されません。
+`score >= 60` は「scoreは60以上ですか」という条件をコードで表した条件式です。結果が `True` なら `print("PASS")` が動きます。`False` なら、その行は実行されません。
 
 ## インデントで処理のまとまりを表す
 
@@ -27,9 +27,9 @@ if score >= 60:
 print("確認終了")
 ```
 
-[インデント](term:indentation)されている2行は、ifの中の[ブロック](term:block)です。条件が `True` のときだけ実行されます。
+[インデント](term:indentation)されている2行は、if文の中の[ブロック](term:block)です。条件式が `True` のときだけ実行されます。
 
-最後の `print("確認終了")` はインデントされていないので、ifの外にあります。条件に関係なく実行されます。
+最後の `print("確認終了")` はインデントされていないので、if文の外にあります。条件式の結果に関係なく実行されます。
 
 Pythonでは、インデントは見た目だけでなく文法の一部です。通常は半角スペース4個を使います。
 
@@ -44,7 +44,7 @@ else:
     print("RETRY")
 ```
 
-[else](term:else-clause)は、ifの条件が `False` だったときに実行する処理を書きます。
+[else](term:else-clause)は、if文の条件式が `False` だったときに実行する処理を書きます。
 
 この例では、`score >= 60` が `False` なので `RETRY` が表示されます。
 
@@ -61,7 +61,7 @@ else:
     print("C")
 ```
 
-[elif](term:elif-clause)は、前の条件が `False` だったときに、次の条件を調べます。条件は上から順に判定され、最初に `True` になったブロックだけが実行されます。
+[elif](term:elif-clause)は、前の条件式が `False` だったときに、次の条件式を調べます。条件式は上から順に判定され、最初に `True` になったブロックだけが実行されます。
 
 この例では `score >= 80` は `False` ですが、`score >= 60` は `True` なので `B` が表示されます。いったん `B` のブロックが実行されると、下の `else` は実行されません。
 

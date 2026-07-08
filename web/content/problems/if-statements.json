@@ -1,0 +1,277 @@
+[
+  {
+    "id": "pass-or-retry",
+    "slug": "pass-or-retry",
+    "lessonId": "if-statements",
+    "title": "合格か再挑戦か",
+    "level": 1,
+    "conceptIds": ["input", "int", "condition", "comparison-operator", "if-statement", "else-clause"],
+    "statement": "得点が1つ入力されます。60点以上なら `PASS`、60点未満なら `RETRY` と表示してください。",
+    "inputFormat": "1行に整数 `score` が入力されます。",
+    "outputFormat": "条件に応じて `PASS` または `RETRY` を表示します。",
+    "samples": [{ "input": "72\n", "output": "PASS\n" }],
+    "hints": ["まずscore >= 60という条件を作ります。", "True側をif、False側をelseに書きます。"],
+    "solution": {
+      "code": "score = int(input())\n\nif score >= 60:\n    print(\"PASS\")\nelse:\n    print(\"RETRY\")",
+      "explanation": "scoreが60以上ならifのブロック、それ以外ならelseのブロックが実行されます。"
+    },
+    "explanationTrace": [
+      { "step": "入力を読む", "detail": "得点scoreを整数として受け取ります。" },
+      { "step": "条件を作る", "detail": "合格条件はscore >= 60です。" },
+      { "step": "分岐を書く", "detail": "if側にPASS、else側にRETRYを書きます。" },
+      { "step": "出力を確認", "detail": "どちらか一方だけが表示されます。" }
+    ],
+    "commonMistakes": ["else側にも条件を書こうとして、構文を崩してしまう。"],
+    "reviewChecklist": [
+      { "id": "has-if-else", "label": "ifとelseの両方がある" },
+      { "id": "pass-threshold", "label": "60点ちょうどをPASSにしている" }
+    ]
+  },
+  {
+    "id": "positive-or-not",
+    "slug": "positive-or-not",
+    "lessonId": "if-statements",
+    "title": "正の数か",
+    "level": 1,
+    "conceptIds": ["input", "int", "condition", "if-statement", "else-clause"],
+    "statement": "整数が1つ入力されます。0より大きければ `POSITIVE`、0以下なら `NOT POSITIVE` と表示してください。",
+    "inputFormat": "1行に整数 `n` が入力されます。",
+    "outputFormat": "条件に応じて `POSITIVE` または `NOT POSITIVE` を表示します。",
+    "samples": [{ "input": "-2\n", "output": "NOT POSITIVE\n" }],
+    "hints": ["0より大きい条件はn > 0です。", "0は正の数ではないのでelse側に入ります。"],
+    "solution": {
+      "code": "n = int(input())\n\nif n > 0:\n    print(\"POSITIVE\")\nelse:\n    print(\"NOT POSITIVE\")",
+      "explanation": "n > 0がTrueならPOSITIVE、FalseならNOT POSITIVEを表示します。"
+    },
+    "explanationTrace": [
+      { "step": "境界を確認", "detail": "境界は0です。" },
+      { "step": "0を含むか確認", "detail": "0より大きいので0は含みません。" },
+      { "step": "分岐する", "detail": "n > 0をifの条件にします。" }
+    ],
+    "commonMistakes": ["n >= 0として、0をPOSITIVEにしてしまう。"],
+    "reviewChecklist": [
+      { "id": "exclude-zero", "label": "0をPOSITIVEにしていない" },
+      { "id": "else-message", "label": "else側でNOT POSITIVEを表示している" }
+    ]
+  },
+  {
+    "id": "password-message",
+    "slug": "password-message",
+    "lessonId": "if-statements",
+    "title": "合い言葉の結果表示",
+    "level": 1,
+    "conceptIds": ["input", "string", "condition", "comparison-operator", "if-statement", "else-clause"],
+    "statement": "1行で合い言葉が入力されます。合い言葉が `python` と等しければ `OK`、違えば `NG` と表示してください。",
+    "inputFormat": "1行に文字列 `word` が入力されます。",
+    "outputFormat": "条件に応じて `OK` または `NG` を表示します。",
+    "samples": [{ "input": "python\n", "output": "OK\n" }],
+    "hints": ["文字列はintへ変換しません。", "word == \"python\" を条件にできます。"],
+    "solution": {
+      "code": "word = input()\n\nif word == \"python\":\n    print(\"OK\")\nelse:\n    print(\"NG\")",
+      "explanation": "入力文字列がpythonと一致するかを比較し、結果に応じて表示を選びます。"
+    },
+    "explanationTrace": [
+      { "step": "入力の種類", "detail": "合い言葉は文字列です。" },
+      { "step": "条件を書く", "detail": "word == \"python\"で一致を調べます。" },
+      { "step": "出力を分ける", "detail": "一致ならOK、違えばNGです。" }
+    ],
+    "commonMistakes": ["`word = \"python\"` と書き、比較ではなく代入にしてしまう。"],
+    "reviewChecklist": [
+      { "id": "keep-string", "label": "入力を文字列のまま扱っている" },
+      { "id": "compare-word", "label": "==でpythonと比較している" }
+    ]
+  },
+  {
+    "id": "age-label",
+    "slug": "age-label",
+    "lessonId": "if-statements",
+    "title": "年齢ラベル",
+    "level": 1,
+    "conceptIds": ["input", "int", "condition", "comparison-operator", "if-statement", "else-clause"],
+    "statement": "年齢が整数で入力されます。18歳以上なら `ADULT`、18歳未満なら `CHILD` と表示してください。",
+    "inputFormat": "1行に整数 `age` が入力されます。",
+    "outputFormat": "条件に応じて `ADULT` または `CHILD` を表示します。",
+    "samples": [{ "input": "18\n", "output": "ADULT\n" }],
+    "hints": ["18歳以上は18を含みます。", "age >= 18をifの条件にします。"],
+    "solution": {
+      "code": "age = int(input())\n\nif age >= 18:\n    print(\"ADULT\")\nelse:\n    print(\"CHILD\")",
+      "explanation": "ageが18以上ならADULT、それ以外ならCHILDを表示します。"
+    },
+    "explanationTrace": [
+      { "step": "境界を読む", "detail": "境界は18歳です。" },
+      { "step": "含むか確認", "detail": "18歳以上なので18も含みます。" },
+      { "step": "ifを書く", "detail": "age >= 18を条件にします。" }
+    ],
+    "commonMistakes": ["age > 18として、18歳をCHILDにしてしまう。"],
+    "reviewChecklist": [
+      { "id": "include-eighteen", "label": "18歳をADULTにしている" },
+      { "id": "one-output", "label": "出力が1行だけになっている" }
+    ]
+  },
+  {
+    "id": "discount-price",
+    "slug": "discount-price",
+    "lessonId": "if-statements",
+    "title": "割引後の金額",
+    "level": 2,
+    "conceptIds": ["input", "int", "arithmetic-operator", "condition", "if-statement", "else-clause"],
+    "statement": "商品の価格が整数で入力されます。1000円以上なら100円引きした金額、1000円未満ならそのままの金額を表示してください。",
+    "inputFormat": "1行に整数 `price` が入力されます。",
+    "outputFormat": "割引後の金額を表示します。",
+    "samples": [{ "input": "1200\n", "output": "1100\n" }],
+    "hints": ["割引する条件はprice >= 1000です。", "if側でprice - 100、else側でpriceを表示します。"],
+    "solution": {
+      "code": "price = int(input())\n\nif price >= 1000:\n    print(price - 100)\nelse:\n    print(price)",
+      "explanation": "1000円以上のときだけ100を引き、それ以外は入力された価格をそのまま出力します。"
+    },
+    "explanationTrace": [
+      { "step": "入力を読む", "detail": "priceは商品の価格です。" },
+      { "step": "条件を決める", "detail": "割引対象は1000円以上です。" },
+      { "step": "出力を分ける", "detail": "割引ありと割引なしで表示する値を変えます。" }
+    ],
+    "commonMistakes": ["1000円未満の場合にも100円引いてしまう。"],
+    "reviewChecklist": [
+      { "id": "discount-only-target", "label": "1000円以上のときだけ割引している" },
+      { "id": "print-price", "label": "1000円未満ではpriceをそのまま表示している" }
+    ]
+  },
+  {
+    "id": "larger-of-two",
+    "slug": "larger-of-two",
+    "lessonId": "if-statements",
+    "title": "大きい方の数",
+    "level": 2,
+    "conceptIds": ["input", "int", "comparison-operator", "condition", "if-statement", "else-clause"],
+    "statement": "2つの整数が1行ずつ入力されます。大きい方の整数を表示してください。同じ値の場合は、その値を表示します。",
+    "inputFormat": "1行目に整数 `a`、2行目に整数 `b` が入力されます。",
+    "outputFormat": "`a` と `b` のうち大きい方を表示します。",
+    "samples": [{ "input": "7\n12\n", "output": "12\n" }],
+    "hints": ["aがb以上ならaを表示できます。", "そうでなければbの方が大きいです。"],
+    "solution": {
+      "code": "a = int(input())\nb = int(input())\n\nif a >= b:\n    print(a)\nelse:\n    print(b)",
+      "explanation": "a >= bならa、そうでなければbを表示します。同じ値の場合もaを表示すれば値は正しいです。"
+    },
+    "explanationTrace": [
+      { "step": "入力を読む", "detail": "aとbの2つの整数があります。" },
+      { "step": "条件を作る", "detail": "aがb以上かを調べます。" },
+      { "step": "表示を選ぶ", "detail": "条件がTrueならa、Falseならbを表示します。" }
+    ],
+    "commonMistakes": ["小さい方を表示する条件にしてしまう。"],
+    "reviewChecklist": [
+      { "id": "read-two-inputs", "label": "2つの整数を受け取っている" },
+      { "id": "same-value-ok", "label": "同じ値の場合も正しい値を表示できる" }
+    ]
+  },
+  {
+    "id": "temperature-label",
+    "slug": "temperature-label",
+    "lessonId": "if-statements",
+    "title": "気温の分類",
+    "level": 2,
+    "conceptIds": ["input", "int", "condition", "if-statement", "elif-clause", "else-clause"],
+    "statement": "気温が整数で入力されます。0度以下なら `FREEZING`、1度以上29度以下なら `NORMAL`、30度以上なら `HOT` と表示してください。",
+    "inputFormat": "1行に整数 `temperature` が入力されます。",
+    "outputFormat": "条件に応じて `FREEZING`、`NORMAL`、`HOT` のいずれかを表示します。",
+    "samples": [{ "input": "30\n", "output": "HOT\n" }],
+    "hints": ["まず0度以下かを調べます。", "次に30度未満かを調べれば、残りは30度以上です。"],
+    "solution": {
+      "code": "temperature = int(input())\n\nif temperature <= 0:\n    print(\"FREEZING\")\nelif temperature < 30:\n    print(\"NORMAL\")\nelse:\n    print(\"HOT\")",
+      "explanation": "条件を上から順に調べます。0度以下でなく、30度未満なら1度以上29度以下です。"
+    },
+    "explanationTrace": [
+      { "step": "範囲を分ける", "detail": "0以下、1から29、30以上の3つです。" },
+      { "step": "上から判定", "detail": "まずtemperature <= 0を調べます。" },
+      { "step": "次の条件", "detail": "0以下でない前提でtemperature < 30を調べます。" },
+      { "step": "残りをelseへ", "detail": "どちらでもなければ30以上です。" }
+    ],
+    "commonMistakes": ["temperature <= 30として、30度をNORMALにしてしまう。"],
+    "reviewChecklist": [
+      { "id": "zero-freezing", "label": "0度をFREEZINGにしている" },
+      { "id": "thirty-hot", "label": "30度をHOTにしている" }
+    ]
+  },
+  {
+    "id": "score-grade",
+    "slug": "score-grade",
+    "lessonId": "if-statements",
+    "title": "成績ランク",
+    "level": 2,
+    "conceptIds": ["input", "int", "condition", "if-statement", "elif-clause", "else-clause"],
+    "statement": "得点が整数で入力されます。80点以上なら `A`、60点以上80点未満なら `B`、60点未満なら `C` と表示してください。",
+    "inputFormat": "1行に整数 `score` が入力されます。",
+    "outputFormat": "条件に応じて `A`、`B`、`C` のいずれかを表示します。",
+    "samples": [{ "input": "75\n", "output": "B\n" }],
+    "hints": ["厳しい条件である80点以上を先に調べます。", "次に60点以上を調べると、80点未満であることは上の条件で除かれています。"],
+    "solution": {
+      "code": "score = int(input())\n\nif score >= 80:\n    print(\"A\")\nelif score >= 60:\n    print(\"B\")\nelse:\n    print(\"C\")",
+      "explanation": "条件は上から順に判定されます。80点以上を先に調べることで、AとBを正しく分けられます。"
+    },
+    "explanationTrace": [
+      { "step": "ランクを読む", "detail": "A、B、Cの3つに分けます。" },
+      { "step": "順番を決める", "detail": "80点以上を先に調べます。" },
+      { "step": "次を調べる", "detail": "Aでなければ、60点以上かを調べます。" },
+      { "step": "残りをelseへ", "detail": "60点未満はCです。" }
+    ],
+    "commonMistakes": ["score >= 60を先に書き、90点でもBにしてしまう。"],
+    "reviewChecklist": [
+      { "id": "a-first", "label": "80点以上の条件を先に書いている" },
+      { "id": "sixty-b", "label": "60点ちょうどをBにしている" }
+    ]
+  },
+  {
+    "id": "shipping-fee",
+    "slug": "shipping-fee",
+    "lessonId": "if-statements",
+    "title": "送料を決める",
+    "level": 3,
+    "conceptIds": ["input", "int", "condition", "if-statement", "elif-clause", "else-clause"],
+    "statement": "購入金額が整数で入力されます。3000円以上なら送料は0円、1000円以上3000円未満なら300円、1000円未満なら600円です。送料を表示してください。",
+    "inputFormat": "1行に整数 `total` が入力されます。",
+    "outputFormat": "送料を整数で表示します。",
+    "samples": [{ "input": "2500\n", "output": "300\n" }],
+    "hints": ["高い金額の条件から調べると整理しやすいです。", "3000円以上でなかった場合だけ、1000円以上かを調べます。"],
+    "solution": {
+      "code": "total = int(input())\n\nif total >= 3000:\n    print(0)\nelif total >= 1000:\n    print(300)\nelse:\n    print(600)",
+      "explanation": "3000円以上を先に判定し、それ以外の中から1000円以上を判定します。残りは1000円未満です。"
+    },
+    "explanationTrace": [
+      { "step": "範囲を読む", "detail": "送料は3段階です。" },
+      { "step": "順序を決める", "detail": "3000円以上を先に調べます。" },
+      { "step": "次の条件", "detail": "3000円未満の中で1000円以上かを調べます。" },
+      { "step": "残り", "detail": "どちらでもなければ1000円未満です。" }
+    ],
+    "commonMistakes": ["1000円以上を先に書き、3000円以上でも300円にしてしまう。"],
+    "reviewChecklist": [
+      { "id": "high-first", "label": "3000円以上を先に判定している" },
+      { "id": "three-fees", "label": "0円、300円、600円の3通りを出力できる" }
+    ]
+  },
+  {
+    "id": "ticket-price",
+    "slug": "ticket-price",
+    "lessonId": "if-statements",
+    "title": "年齢別チケット料金",
+    "level": 3,
+    "conceptIds": ["input", "int", "condition", "if-statement", "elif-clause", "else-clause"],
+    "statement": "年齢が整数で入力されます。6歳未満は0円、6歳以上18歳未満は500円、18歳以上65歳未満は1000円、65歳以上は700円です。チケット料金を表示してください。",
+    "inputFormat": "1行に整数 `age` が入力されます。",
+    "outputFormat": "チケット料金を整数で表示します。",
+    "samples": [{ "input": "70\n", "output": "700\n" }],
+    "hints": ["年齢の小さい範囲から順に調べると書きやすいです。", "age < 6、age < 18、age < 65の順に調べます。"],
+    "solution": {
+      "code": "age = int(input())\n\nif age < 6:\n    print(0)\nelif age < 18:\n    print(500)\nelif age < 65:\n    print(1000)\nelse:\n    print(700)",
+      "explanation": "条件を小さい年齢から順に調べます。前の条件で外れた範囲は、次の条件では考えなくてよくなります。"
+    },
+    "explanationTrace": [
+      { "step": "範囲を読む", "detail": "料金は年齢で4つに分かれます。" },
+      { "step": "小さい順に見る", "detail": "まず6歳未満かを調べます。" },
+      { "step": "次の境界", "detail": "6歳以上である前提で18歳未満かを調べます。" },
+      { "step": "最後の範囲", "detail": "65歳未満でもなければ65歳以上です。" }
+    ],
+    "commonMistakes": ["age <= 6として、6歳を0円にしてしまう。"],
+    "reviewChecklist": [
+      { "id": "boundary-six", "label": "6歳を500円にしている" },
+      { "id": "boundary-sixty-five", "label": "65歳を700円にしている" }
+    ]
+  }
+]

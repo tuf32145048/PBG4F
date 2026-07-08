@@ -168,7 +168,7 @@
     "short": "条件によって実行する処理を選ぶ構文です。",
     "detail": "ifの後ろへ条件式を書き、条件がTrueのときにインデントされた処理を実行します。",
     "later": "elifやelseを組み合わせると、複数の経路から一つを選べます。",
-    "relatedTermIds": ["condition", "indentation"]
+    "relatedTermIds": ["condition", "indentation", "else-clause", "elif-clause", "block"]
   },
   {
     "id": "indentation",
@@ -177,6 +177,33 @@
     "short": "行の先頭へ空白を置き、処理のまとまりを表すことです。",
     "detail": "Pythonでは見た目だけでなく文法の一部です。通常は半角スペース4個を使います。",
     "later": "インデントで作られるまとまりをブロックと呼びます。",
-    "relatedTermIds": ["if-statement"]
+    "relatedTermIds": ["if-statement", "block"]
+  },
+  {
+    "id": "else-clause",
+    "label": "else",
+    "aliases": ["else節"],
+    "short": "ifの条件がFalseだったときに実行する部分です。",
+    "detail": "ifの条件に当てはまらなかった場合の処理を書きます。else自体には条件を書きません。",
+    "later": "elseはifだけでなく、forやwhile、tryと組み合わせて使われる場面もあります。",
+    "relatedTermIds": ["if-statement", "condition", "block"]
+  },
+  {
+    "id": "elif-clause",
+    "label": "elif",
+    "aliases": ["elif節", "else if"],
+    "short": "前の条件がFalseだったときに、次の条件を調べる部分です。",
+    "detail": "複数の条件を上から順に調べたいときに使います。最初にTrueになったブロックだけが実行されます。",
+    "later": "elifはelse ifを短くしたPythonの書き方です。条件の順番によって結果が変わることがあります。",
+    "relatedTermIds": ["if-statement", "condition", "else-clause"]
+  },
+  {
+    "id": "block",
+    "label": "ブロック",
+    "aliases": ["処理のまとまり"],
+    "short": "同じまとまりとして実行される複数の文です。",
+    "detail": "Pythonではインデントによってブロックを表します。ifの中にある行は、条件がTrueのときだけ実行されます。",
+    "later": "関数、ループ、例外処理などでもブロックを使って処理範囲を表します。",
+    "relatedTermIds": ["indentation", "if-statement"]
   }
 ]

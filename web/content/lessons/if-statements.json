@@ -1,0 +1,35 @@
+{
+  "id": "if-statements",
+  "slug": "if-statements",
+  "order": 4,
+  "title": "条件分岐",
+  "summary": "条件によって実行する処理を選び、入力に応じて違う結果を出します。",
+  "objectives": [
+    "ifを使って条件がTrueのときだけ処理を実行できる",
+    "elseを使って条件がFalseのときの処理を書ける",
+    "elifを使って複数の条件を上から順に判定できる",
+    "インデントで条件分岐の処理範囲を表せる"
+  ],
+  "prerequisiteIds": ["comparison-and-booleans"],
+  "termIds": [
+    "if-statement",
+    "condition",
+    "boolean",
+    "comparison-operator",
+    "else-clause",
+    "elif-clause",
+    "indentation",
+    "block",
+    "input",
+    "int",
+    "print",
+    "standard-output"
+  ],
+  "tipIds": [
+    "read-condition-as-question",
+    "indentation-defines-block",
+    "test-each-branch",
+    "output-is-a-contract",
+    "separate-steps"
+  ]
+}

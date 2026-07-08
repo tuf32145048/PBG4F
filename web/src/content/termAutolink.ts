@@ -49,10 +49,11 @@ export function createTermCandidates(terms: Term[]): TermCandidate[] {
   const candidates = new Map<string, TermCandidate>();
 
   for (const term of terms) {
-    const variants = [
-      { text: term.label, priority: 0 },
-      ...term.aliases.map((text) => ({ text, priority: 1 })),
-    ];
+    if (!term.autoLink) {
+      continue;
+    }
+
+    const variants = [{ text: term.label, priority: 0 }];
 
     for (const variant of variants) {
       const existing = candidates.get(variant.text);

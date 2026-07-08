@@ -10,7 +10,7 @@
     "inputFormat": "入力はありません。",
     "outputFormat": "計算結果を表示します。",
     "samples": [{ "input": "", "output": "13\n" }],
-    "hints": ["足し算には+を使います。", "計算式をprintの中へ書けます。"],
+    "hints": ["足し算には+を使います。", "計算式をprint()の中へ書けます。"],
     "solution": {
       "code": "print(8 + 5)",
       "explanation": "8 + 5を計算し、その結果を表示します。"
@@ -145,7 +145,7 @@
     "inputFormat": "入力はありません。",
     "outputFormat": "`75` と表示します。",
     "samples": [{ "input": "", "output": "75\n" }],
-    "hints": ["代入は `変数名 = 値` の形です。", "printにはscoreを渡します。"],
+    "hints": ["代入は `変数名 = 値` の形です。", "print()にはscoreを渡します。"],
     "solution": {
       "code": "score = 75\nprint(score)",
       "explanation": "75へscoreという名前を付け、その名前を使って表示します。"
@@ -234,7 +234,7 @@
     "explanationTrace": [
       { "step": "部分を確認", "detail": "前半はPY、後半はTHONです。" },
       { "step": "順番を決める", "detail": "leftの後ろへrightをつなぎます。" },
-      { "step": "表示する", "detail": "left + rightをprintへ渡します。" }
+      { "step": "表示する", "detail": "left + rightをprint()へ渡します。" }
     ],
     "commonMistakes": ["right + leftとしてTHONPYにする。"],
     "reviewChecklist": [

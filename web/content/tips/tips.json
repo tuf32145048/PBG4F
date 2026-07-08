@@ -16,7 +16,7 @@
   {
     "id": "input-starts-as-text",
     "title": "入力は最初に文字列として届く",
-    "body": "キーボードから3と入力しても、inputが返す値は文字列です。計算前にintへ変換する習慣を付けます。",
+    "body": "キーボードから3と入力しても、inputが返す値は文字列です。計算前にint()へ変換する習慣を付けます。",
     "lessonIds": ["input-and-conversion"],
     "termIds": ["input", "string", "int", "type-conversion"]
   },
@@ -56,7 +56,7 @@
     "title": "条件式は質問として読む",
     "body": "price >= 1000 は「priceは1000以上ですか」と読むと、TrueとFalseのどちらになるか考えやすくなります。",
     "lessonIds": ["comparison-and-booleans", "if-statements"],
-    "termIds": ["condition", "boolean", "comparison-operator"]
+    "termIds": ["condition", "condition-expression", "boolean", "comparison-operator"]
   },
   {
     "id": "indentation-defines-block",
@@ -70,6 +70,6 @@
     "title": "分岐ごとに入力例を試す",
     "body": "条件分岐を書いたら、if側、elif側、else側に入る入力をそれぞれ考えると、境界の間違いを見つけやすくなります。",
     "lessonIds": ["if-statements"],
-    "termIds": ["if-statement", "elif-clause", "else-clause", "condition"]
+    "termIds": ["if-statement", "elif-clause", "else-clause", "condition-expression"]
   }
 ]

@@ -12,8 +12,10 @@
   ],
   "prerequisiteIds": ["comparison-and-booleans"],
   "termIds": [
-    "if-statement",
+    "conditional-branching",
     "condition",
+    "condition-expression",
+    "if-statement",
     "boolean",
     "comparison-operator",
     "else-clause",

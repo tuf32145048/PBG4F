@@ -7,6 +7,14 @@ const idSchema = z
 
 const nonEmptyText = z.string().trim().min(1);
 
+export const termCategorySchema = z.enum([
+  "general-concept",
+  "programming-concept",
+  "python-syntax",
+  "python-api",
+  "environment",
+]);
+
 export const lessonMetadataSchema = z.object({
   id: idSchema,
   slug: idSchema,
@@ -70,6 +78,9 @@ export const termSchema = z.object({
   id: idSchema,
   label: nonEmptyText,
   aliases: z.array(nonEmptyText),
+  category: termCategorySchema,
+  descriptionTargetId: idSchema,
+  autoLink: z.boolean(),
   short: nonEmptyText,
   detail: nonEmptyText,
   later: nonEmptyText,
@@ -87,6 +98,7 @@ export const tipSchema = z.object({
 export type LessonMetadata = z.infer<typeof lessonMetadataSchema>;
 export type Lesson = z.infer<typeof lessonSchema>;
 export type Problem = z.infer<typeof problemSchema>;
+export type TermCategory = z.infer<typeof termCategorySchema>;
 export type Term = z.infer<typeof termSchema>;
 export type Tip = z.infer<typeof tipSchema>;
 
@@ -207,6 +219,12 @@ export function buildCatalog(raw: RawContent): ContentCatalog {
   }
 
   for (const term of terms) {
+    ensureReferences(
+      `term ${term.id}`,
+      [term.descriptionTargetId],
+      termById,
+      "description target",
+    );
     ensureReferences(
       `term ${term.id}`,
       term.relatedTermIds,

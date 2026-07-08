@@ -10,10 +10,10 @@
     "inputFormat": "1行に名前 `name` が入力されます。",
     "outputFormat": "入力された名前を表示します。",
     "samples": [{ "input": "Mika\n", "output": "Mika\n" }],
-    "hints": ["inputの結果を変数へ代入します。", "受け取った変数をprintします。"],
+    "hints": ["input()の結果を変数へ代入します。", "受け取った変数をprintします。"],
     "solution": {
       "code": "name = input()\nprint(name)",
-      "explanation": "inputで受け取った文字列を変更せず表示します。"
+      "explanation": "input()で受け取った文字列を変更せず表示します。"
     },
     "explanationTrace": [
       { "step": "入力を確認", "detail": "名前が文字列として1行届きます。" },
@@ -22,7 +22,7 @@
     ],
     "commonMistakes": ["`print(\"name\")` と固定文字列を表示する。"],
     "reviewChecklist": [
-      { "id": "read-input", "label": "inputを呼び出している" },
+      { "id": "read-input", "label": "input()を呼び出している" },
       { "id": "print-variable", "label": "受け取った変数を表示している" }
     ]
   },
@@ -37,19 +37,19 @@
     "inputFormat": "1行に整数 `n` が入力されます。",
     "outputFormat": "`n + 1` を表示します。",
     "samples": [{ "input": "7\n", "output": "8\n" }],
-    "hints": ["inputの結果は文字列です。", "int(input())で整数として受け取れます。"],
+    "hints": ["input()の結果は文字列です。", "int(input())で整数として受け取れます。"],
     "solution": {
       "code": "n = int(input())\nprint(n + 1)",
       "explanation": "入力を整数へ変換してから1を足します。"
     },
     "explanationTrace": [
-      { "step": "入力の型", "detail": "inputは文字列を返します。" },
-      { "step": "変換する", "detail": "計算前にintへ変換します。" },
+      { "step": "入力の型", "detail": "input()は文字列を返します。" },
+      { "step": "変換する", "detail": "計算前にint()へ変換します。" },
       { "step": "計算する", "detail": "n + 1を表示します。" }
     ],
-    "commonMistakes": ["intへ変換せず、文字列へ1を足そうとする。"],
+    "commonMistakes": ["int()へ変換せず、文字列へ1を足そうとする。"],
     "reviewChecklist": [
-      { "id": "convert-int", "label": "入力をintへ変換している" },
+      { "id": "convert-int", "label": "入力をint()へ変換している" },
       { "id": "add-one", "label": "変換後の値へ1を足している" }
     ]
   },
@@ -70,8 +70,8 @@
       "explanation": "整数として受け取り、2を掛けます。"
     },
     "explanationTrace": [
-      { "step": "受け取る", "detail": "inputで1行を読みます。" },
-      { "step": "数値にする", "detail": "intで整数へ変換します。" },
+      { "step": "受け取る", "detail": "input()で1行を読みます。" },
+      { "step": "数値にする", "detail": "int()で整数へ変換します。" },
       { "step": "2倍する", "detail": "n * 2を計算します。" }
     ],
     "commonMistakes": ["文字列のまま2倍し、`99`と表示する。"],
@@ -91,7 +91,7 @@
     "inputFormat": "1行目に整数 `a`、2行目に整数 `b` が入力されます。",
     "outputFormat": "`a + b` を表示します。",
     "samples": [{ "input": "4\n11\n", "output": "15\n" }],
-    "hints": ["inputを2回呼び出します。", "aとbをそれぞれintへ変換します。"],
+    "hints": ["input()を2回呼び出します。", "aとbをそれぞれint()へ変換します。"],
     "solution": {
       "code": "a = int(input())\nb = int(input())\nprint(a + b)",
       "explanation": "2行を別々に整数として受け取り、足し算します。"
@@ -101,10 +101,10 @@
       { "step": "別々に受け取る", "detail": "aとbへ1行ずつ代入します。" },
       { "step": "合計する", "detail": "a + bを表示します。" }
     ],
-    "commonMistakes": ["inputを1回しか呼ばず、片方の値を読まない。"],
+    "commonMistakes": ["input()を1回しか呼ばず、片方の値を読まない。"],
     "reviewChecklist": [
-      { "id": "two-inputs", "label": "inputを2回呼び出している" },
-      { "id": "both-int", "label": "両方をintへ変換している" }
+      { "id": "two-inputs", "label": "input()を2回呼び出している" },
+      { "id": "both-int", "label": "両方をint()へ変換している" }
     ]
   },
   {
@@ -172,7 +172,7 @@
     "inputFormat": "1行に単価 `price` が入力されます。",
     "outputFormat": "3個分の合計金額を表示します。",
     "samples": [{ "input": "120\n", "output": "360\n" }],
-    "hints": ["単価をintで受け取ります。", "個数3を掛けます。"],
+    "hints": ["単価をint()で受け取ります。", "個数3を掛けます。"],
     "solution": {
       "code": "price = int(input())\ntotal = price * 3\nprint(total)",
       "explanation": "入力された単価を3倍します。"
@@ -184,7 +184,7 @@
     ],
     "commonMistakes": ["price + 3として個数を足す。"],
     "reviewChecklist": [
-      { "id": "price-int", "label": "priceをintへ変換している" },
+      { "id": "price-int", "label": "priceをint()へ変換している" },
       { "id": "three-items", "label": "単価を3倍している" }
     ]
   },
@@ -199,19 +199,19 @@
     "inputFormat": "1行に整数 `score` が入力されます。",
     "outputFormat": "`SCORE:score` の形で表示します。",
     "samples": [{ "input": "80\n", "output": "SCORE:80\n" }],
-    "hints": ["文字列同士を+でつなぎます。", "整数scoreをstrで文字列へ変換します。"],
+    "hints": ["文字列同士を+でつなぎます。", "整数scoreをstr()で文字列へ変換します。"],
     "solution": {
       "code": "score = int(input())\nmessage = \"SCORE:\" + str(score)\nprint(message)",
-      "explanation": "整数をstrで文字列へ変換し、固定文字列と連結します。"
+      "explanation": "整数をstr()で文字列へ変換し、固定文字列と連結します。"
     },
     "explanationTrace": [
       { "step": "出力を分ける", "detail": "SCORE:と入力値の2部分です。" },
-      { "step": "型をそろえる", "detail": "+で連結するためscoreをstrへ変換します。" },
+      { "step": "型をそろえる", "detail": "+で連結するためscoreをstr()へ変換します。" },
       { "step": "連結する", "detail": "空白を加えず表示します。" }
     ],
     "commonMistakes": ["文字列と整数をそのまま+でつなぐ。"],
     "reviewChecklist": [
-      { "id": "score-string", "label": "連結前にscoreをstrへ変換している" },
+      { "id": "score-string", "label": "連結前にscoreをstr()へ変換している" },
       { "id": "no-label-space", "label": "コロンの後ろに空白を入れていない" }
     ]
   },
@@ -226,7 +226,7 @@
     "inputFormat": "1行に整数 `n` が入力されます。",
     "outputFormat": "1行目に `n - 1`、2行目に `n + 1` を表示します。",
     "samples": [{ "input": "10\n", "output": "9\n11\n" }],
-    "hints": ["入力は1回だけです。", "printを2回使い、n - 1とn + 1を順に表示します。"],
+    "hints": ["入力は1回だけです。", "print()を2回使い、n - 1とn + 1を順に表示します。"],
     "solution": {
       "code": "n = int(input())\nprint(n - 1)\nprint(n + 1)",
       "explanation": "同じ入力値を2つの計算で再利用します。"
@@ -253,7 +253,7 @@
     "inputFormat": "1行に整数 `level` が入力されます。",
     "outputFormat": "更新後のレベルを表示します。",
     "samples": [{ "input": "5\n", "output": "7\n" }],
-    "hints": ["levelをintで受け取ります。", "`level = level + 2` と更新できます。"],
+    "hints": ["levelをint()で受け取ります。", "`level = level + 2` と更新できます。"],
     "solution": {
       "code": "level = int(input())\nlevel = level + 2\nprint(level)",
       "explanation": "入力値へ2を足し、同じ変数へ再代入します。"

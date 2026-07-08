@@ -53,7 +53,7 @@ print(score == 100)
 
 ## 条件式として読む
 
-比較を使った式は [条件式](term:condition) として読めます。
+比較を使った式は [条件式](term:condition-expression) として読めます。
 
 ```python
 price = 800

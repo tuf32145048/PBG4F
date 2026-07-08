@@ -6,11 +6,19 @@ import {
   splitTextByTerms,
 } from "../src/content/termAutolink";
 
-function createTerm(id: string, label: string, aliases: string[] = []): Term {
+function createTerm(
+  id: string,
+  label: string,
+  aliases: string[] = [],
+  autoLink = true,
+): Term {
   return {
     id,
     label,
     aliases,
+    category: "programming-concept",
+    descriptionTargetId: id,
+    autoLink,
     short: "Short",
     detail: "Detail",
     later: "Later",
@@ -51,14 +59,24 @@ describe("term autolinking", () => {
     ]);
   });
 
-  it("prefers a term label over another term's alias", () => {
+  it("does not use aliases as automatic link text", () => {
+    const candidates = createTermCandidates([createTerm("string", "文字列", ["str"])]);
+
+    expect(splitTextByTerms("str 文字列", candidates)).toEqual([
+      { text: "str " },
+      { termId: "string", text: "文字列" },
+    ]);
+  });
+
+  it("skips terms that disable automatic links", () => {
     const candidates = createTermCandidates([
-      createTerm("string", "文字列", ["str"]),
-      createTerm("str", "str"),
+      createTerm("value", "値", [], false),
+      createTerm("string", "文字列"),
     ]);
 
-    expect(splitTextByTerms("str", candidates)).toEqual([
-      { termId: "str", text: "str" },
+    expect(splitTextByTerms("値と文字列", candidates)).toEqual([
+      { text: "値と" },
+      { termId: "string", text: "文字列" },
     ]);
   });
 

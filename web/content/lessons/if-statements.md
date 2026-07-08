@@ -11,7 +11,7 @@ if score >= 60:
     print("PASS")
 ```
 
-[if文](term:if-statement)は、[条件式](term:condition)が `True` のときだけ、内側の処理を実行します。
+[if文](term:if-statement)は、[条件式](term:condition-expression)が `True` のときだけ、内側の処理を実行します。
 
 `score >= 60` は「scoreは60以上ですか」という質問です。答えが `True` なら `print("PASS")` が動きます。`False` なら、その行は実行されません。
 

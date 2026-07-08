@@ -9,7 +9,7 @@ name = input()
 print(name)
 ```
 
-[input](term:input) は、[標準入力](term:standard-input)から1行を受け取ります。受け取った値は、まず[文字列](term:string)になります。
+[input()](term:input) は、[標準入力](term:standard-input)から1行を受け取ります。受け取った値は、まず[文字列](term:string)になります。
 
 ## 数値として計算する
 
@@ -19,7 +19,7 @@ age = int(age_text)
 print(age + 1)
 ```
 
-`input()` の結果へそのまま `1` を足すことはできません。[int](term:int)を使って文字列を整数へ[型変換](term:type-conversion)します。
+`input()` の結果へそのまま `1` を足すことはできません。[int()](term:int)を使って文字列を整数へ[型変換](term:type-conversion)します。
 
 短く書く場合は次のようにできます。
 
@@ -38,7 +38,7 @@ message = "得点: " + str(score)
 print(message)
 ```
 
-[str](term:str)は値を文字列へ変換します。ただし、`print("得点:", score)` のように、`print`へ複数の値を渡せる場面では無理に連結する必要はありません。
+[str()](term:str)は値を文字列へ変換します。ただし、`print("得点:", score)` のように、`print`へ複数の値を渡せる場面では無理に連結する必要はありません。
 
 ## 入力・処理・出力を分ける
 

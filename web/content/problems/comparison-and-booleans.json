@@ -78,7 +78,7 @@
     "commonMistakes": ["`>` を使い、10ちょうどをFalseにしてしまう。"],
     "reviewChecklist": [
       { "id": "include-ten", "label": "10を含む比較になっている" },
-      { "id": "convert-number", "label": "入力をintへ変換している" }
+      { "id": "convert-number", "label": "入力をint()へ変換している" }
     ]
   },
   {
@@ -92,7 +92,7 @@
     "inputFormat": "1行目に文字列 `expected`、2行目に文字列 `answer` が入力されます。",
     "outputFormat": "`expected == answer` の結果を表示します。",
     "samples": [{ "input": "open\nopen\n", "output": "True\n" }],
-    "hints": ["文字列はintへ変換せず、そのまま受け取ります。", "文字列同士も==で等しいか比べられます。"],
+    "hints": ["文字列はint()へ変換せず、そのまま受け取ります。", "文字列同士も==で等しいか比べられます。"],
     "solution": {
       "code": "expected = input()\nanswer = input()\nprint(expected == answer)",
       "explanation": "2つの文字列をそのまま比較します。同じ文字の並びならTrueです。"
@@ -102,7 +102,7 @@
       { "step": "比べる", "detail": "expectedとanswerが同じかを調べます。" },
       { "step": "表示する", "detail": "比較結果を表示します。" }
     ],
-    "commonMistakes": ["文字列をintへ変換しようとする。"],
+    "commonMistakes": ["文字列をint()へ変換しようとする。"],
     "reviewChecklist": [
       { "id": "keep-string", "label": "入力を文字列のまま扱っている" },
       { "id": "compare-strings", "label": "expectedとanswerを比較している" }

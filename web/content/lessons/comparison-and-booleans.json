@@ -14,6 +14,7 @@
     "comparison-operator",
     "boolean",
     "condition",
+    "condition-expression",
     "assignment",
     "number",
     "string",

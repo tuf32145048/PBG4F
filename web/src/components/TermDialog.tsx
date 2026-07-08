@@ -1,7 +1,16 @@
 import { useCallback, useEffect, useRef } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import { catalog } from "../content/loadContent";
+import type { TermCategory } from "../content/schema";
 import styles from "../styles/app.module.css";
+
+const termCategoryLabels: Record<TermCategory, string> = {
+  "general-concept": "一般概念",
+  "programming-concept": "プログラミング概念",
+  "python-syntax": "Pythonの文法",
+  "python-api": "Pythonの機能・関数・メソッド",
+  environment: "実行環境・競プロ寄りの概念",
+};
 
 export function TermDialog() {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -66,10 +75,15 @@ export function TermDialog() {
         >
           ×
         </button>
-        <p className={styles.eyebrow}>FIELD NOTE</p>
+        <p className={styles.eyebrow}>{termCategoryLabels[term.category]}</p>
         <h2 id="term-dialog-title">{term.label}</h2>
         {term.aliases.length > 0 && (
           <p className={styles.aliases}>別名: {term.aliases.join(" / ")}</p>
+        )}
+        {term.descriptionTargetId !== term.id && (
+          <p className={styles.aliases}>
+            説明対象: {term.descriptionTargetId}
+          </p>
         )}
 
         <div className={styles.termLevel}>

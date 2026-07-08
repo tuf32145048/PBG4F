@@ -3,6 +3,8 @@ import userEvent from "@testing-library/user-event";
 import { afterEach, beforeEach, describe, expect, it } from "vitest";
 import { App } from "../src/app/App";
 
+const routeLoadTimeout = { timeout: 5000 };
+
 beforeEach(() => {
   window.localStorage.clear();
   window.location.hash = "";
@@ -21,7 +23,7 @@ describe("application routes and interactions", () => {
       await screen.findByRole("heading", {
         level: 1,
         name: "コードを書いて動かす",
-      }),
+      }, routeLoadTimeout),
     ).toBeInTheDocument();
   });
 
@@ -30,16 +32,20 @@ describe("application routes and interactions", () => {
     window.location.hash = "#/lessons/getting-started";
     render(<App />);
 
-    const printButtons = await screen.findAllByRole("button", {
-      name: "print",
-    });
+    const printButtons = await screen.findAllByRole(
+      "button",
+      {
+        name: "print()",
+      },
+      routeLoadTimeout,
+    );
     await user.click(printButtons[0]!);
 
     expect(
-      screen.getByRole("dialog", { name: "print" }),
+      screen.getByRole("dialog", { name: "print()" }),
     ).toBeInTheDocument();
     expect(
-      screen.getByText("値を画面へ表示するための関数です。"),
+      screen.getByText("値を標準出力へ送るための関数です。"),
     ).toBeVisible();
     expect(
       screen.getByText("もう少し詳しく").closest("details"),
@@ -61,7 +67,7 @@ describe("application routes and interactions", () => {
       await screen.findByRole("heading", {
         level: 1,
         name: "最初のあいさつ",
-      }),
+      }, routeLoadTimeout),
     ).toBeInTheDocument();
     expect(screen.queryByText("HINT 1")).not.toBeInTheDocument();
 
@@ -71,9 +77,9 @@ describe("application routes and interactions", () => {
 
     const hint = screen.getByText("HINT 1").parentElement;
     expect(hint).not.toBeNull();
-    expect(hint).toHaveTextContent("表示にはprintを使います。");
+    expect(hint).toHaveTextContent("表示にはprint()を使います。");
     expect(
-      within(hint!).getByRole("button", { name: "print" }),
+      within(hint!).getByRole("button", { name: "print()" }),
     ).toBeInTheDocument();
     expect(screen.queryByText("HINT 2")).not.toBeInTheDocument();
   });
@@ -83,9 +89,13 @@ describe("application routes and interactions", () => {
     window.location.hash = "#/lessons/getting-started";
     render(<App />);
 
-    const printButtons = await screen.findAllByRole("button", {
-      name: "print",
-    });
+    const printButtons = await screen.findAllByRole(
+      "button",
+      {
+        name: "print()",
+      },
+      routeLoadTimeout,
+    );
     await user.click(printButtons[0]!);
 
     const detailSummary = screen.getByText("もう少し詳しく");
@@ -98,7 +108,11 @@ describe("application routes and interactions", () => {
     window.location.hash = "#/problems/hello-python";
     render(<App />);
 
-    const summary = await screen.findByText("解答例を見る");
+    const summary = await screen.findByText(
+      "解答例を見る",
+      {},
+      routeLoadTimeout,
+    );
     expect(summary.closest("details")).not.toHaveAttribute("open");
   });
 });

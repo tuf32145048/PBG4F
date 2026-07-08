@@ -93,7 +93,7 @@ print("example")
 問題を開く前に確認してほしい観点を書きます。
 ````
 
-通常の説明文では用語リンクが自動で付きます。意図が曖昧になる場合だけ `[表示](term:print)` のように明示リンクを使います。コードブロック、インラインコード、既存リンクは自動リンク対象外です。
+通常の説明文では、`autoLink` が有効な用語の表示語だけに自動リンクが付きます。意図が曖昧になる場合だけ `[print()](term:print)` のように明示リンクを使います。コードブロック、インラインコード、既存リンクは自動リンク対象外です。
 
 ## Problem Object
 
@@ -160,6 +160,9 @@ print("example")
   "id": "term-id",
   "label": "表示名",
   "aliases": ["別名"],
+  "category": "programming-concept",
+  "descriptionTargetId": "term-id",
+  "autoLink": true,
   "short": "初見で読む短い説明。",
   "detail": "理解を深める説明。",
   "later": "今は深入りしないが、後で役立つ背景。",

@@ -10,15 +10,15 @@
     "inputFormat": "入力はありません。",
     "outputFormat": "`Hello, Python!` と表示します。",
     "samples": [{ "input": "", "output": "Hello, Python!\n" }],
-    "hints": ["表示にはprintを使います。", "表示する文字列を引用符で囲みます。"],
+    "hints": ["表示にはprint()を使います。", "表示する文字列を引用符で囲みます。"],
     "solution": {
       "code": "print(\"Hello, Python!\")",
-      "explanation": "表示したい文字列をprintへ渡します。"
+      "explanation": "表示したい文字列をprint()へ渡します。"
     },
     "explanationTrace": [
       { "step": "出力を確認", "detail": "必要な出力は固定の文字列1行です。" },
-      { "step": "命令を選ぶ", "detail": "値の表示にはprintを使います。" },
-      { "step": "コードにする", "detail": "文字列を引用符で囲んでprintへ渡します。" }
+      { "step": "命令を選ぶ", "detail": "値の表示にはprint()を使います。" },
+      { "step": "コードにする", "detail": "文字列を引用符で囲んでprint()へ渡します。" }
     ],
     "commonMistakes": ["引用符や丸かっこを閉じ忘れる。"],
     "reviewChecklist": [
@@ -37,7 +37,7 @@
     "inputFormat": "入力はありません。",
     "outputFormat": "`Good morning` と表示します。",
     "samples": [{ "input": "", "output": "Good morning\n" }],
-    "hints": ["printの丸かっこ内へ表示内容を書きます。", "空白も文字列の一部です。"],
+    "hints": ["print()の丸かっこ内へ表示内容を書きます。", "空白も文字列の一部です。"],
     "solution": {
       "code": "print(\"Good morning\")",
       "explanation": "2語の間の半角空白を含めて文字列を表示します。"
@@ -45,7 +45,7 @@
     "explanationTrace": [
       { "step": "文字を確認", "detail": "Goodとmorningの間に空白があります。" },
       { "step": "値を作る", "detail": "全体を一つの文字列にします。" },
-      { "step": "表示する", "detail": "printへ文字列を渡します。" }
+      { "step": "表示する", "detail": "print()へ文字列を渡します。" }
     ],
     "commonMistakes": ["単語間の空白を入れ忘れる。"],
     "reviewChecklist": [
@@ -64,15 +64,15 @@
     "inputFormat": "入力はありません。",
     "outputFormat": "指定された2行を順番に表示します。",
     "samples": [{ "input": "", "output": "READY\nGO\n" }],
-    "hints": ["printを2回使えます。", "コードの上から順に表示されます。"],
+    "hints": ["print()を2回使えます。", "コードの上から順に表示されます。"],
     "solution": {
       "code": "print(\"READY\")\nprint(\"GO\")",
-      "explanation": "各行を別々のprintで順番に表示します。"
+      "explanation": "各行を別々のprint()で順番に表示します。"
     },
     "explanationTrace": [
       { "step": "行数を確認", "detail": "出力は2行です。" },
       { "step": "順番を確認", "detail": "READYが先、GOが後です。" },
-      { "step": "コードにする", "detail": "printを2行書きます。" }
+      { "step": "コードにする", "detail": "print()を2行書きます。" }
     ],
     "commonMistakes": ["1行に `READY GO` とまとめて表示する。"],
     "reviewChecklist": [
@@ -91,15 +91,15 @@
     "inputFormat": "入力はありません。",
     "outputFormat": "`2026` と表示します。",
     "samples": [{ "input": "", "output": "2026\n" }],
-    "hints": ["数値は引用符なしでもprintへ渡せます。", "`print(2026)` の形を考えます。"],
+    "hints": ["数値は引用符なしでもprint()へ渡せます。", "`print(2026)` の形を考えます。"],
     "solution": {
       "code": "print(2026)",
-      "explanation": "整数をそのままprintへ渡します。"
+      "explanation": "整数をそのままprint()へ渡します。"
     },
     "explanationTrace": [
       { "step": "値を確認", "detail": "表示する値は整数2026です。" },
       { "step": "入力を確認", "detail": "入力を受け取る必要はありません。" },
-      { "step": "表示する", "detail": "数値をprintへ渡します。" }
+      { "step": "表示する", "detail": "数値をprint()へ渡します。" }
     ],
     "commonMistakes": ["数字を全角文字で書く。"],
     "reviewChecklist": [
@@ -118,17 +118,17 @@
     "inputFormat": "入力はありません。",
     "outputFormat": "`OK` と表示します。",
     "samples": [{ "input": "", "output": "OK\n" }],
-    "hints": ["コメントは#から始めます。", "表示する行にはprintを使います。"],
+    "hints": ["コメントは#から始めます。", "表示する行にはprint()を使います。"],
     "solution": {
       "code": "# 結果を表示\nprint(\"OK\")",
       "explanation": "コメントは実行されないため、出力はOKだけです。"
     },
     "explanationTrace": [
-      { "step": "役割を分ける", "detail": "説明はコメント、結果はprintにします。" },
+      { "step": "役割を分ける", "detail": "説明はコメント、結果はprint()にします。" },
       { "step": "コメントを書く", "detail": "#の後ろへ説明を書きます。" },
       { "step": "結果を表示", "detail": "次の行でOKを表示します。" }
     ],
-    "commonMistakes": ["コメントの文字までprintで表示する。"],
+    "commonMistakes": ["コメントの文字までprint()で表示する。"],
     "reviewChecklist": [
       { "id": "has-comment", "label": "#を使ったコメントがある" },
       { "id": "only-ok", "label": "実行結果はOKだけになっている" }
@@ -145,7 +145,7 @@
     "inputFormat": "入力はありません。",
     "outputFormat": "各行に `PING` と表示します。",
     "samples": [{ "input": "", "output": "PING\nPING\n" }],
-    "hints": ["同じprintを2回書いて構いません。", "1回目と2回目の文字列は同じです。"],
+    "hints": ["同じprint()を2回書いて構いません。", "1回目と2回目の文字列は同じです。"],
     "solution": {
       "code": "print(\"PING\")\nprint(\"PING\")",
       "explanation": "同じ表示命令を2回実行します。"
@@ -153,7 +153,7 @@
     "explanationTrace": [
       { "step": "回数を確認", "detail": "PINGは2回必要です。" },
       { "step": "行を確認", "detail": "2回は別々の行へ表示します。" },
-      { "step": "コードにする", "detail": "同じprintを2行書きます。" }
+      { "step": "コードにする", "detail": "同じprint()を2行書きます。" }
     ],
     "commonMistakes": ["`PINGPING` と1行へ続けて表示する。"],
     "reviewChecklist": [
@@ -175,12 +175,12 @@
     "hints": ["角かっこも表示する文字列に含めます。", "全体を引用符で囲みます。"],
     "solution": {
       "code": "print(\"[START]\")",
-      "explanation": "角かっこを含む文字列全体をprintへ渡します。"
+      "explanation": "角かっこを含む文字列全体をprint()へ渡します。"
     },
     "explanationTrace": [
       { "step": "記号を確認", "detail": "STARTの左右に角かっこがあります。" },
       { "step": "文字列にする", "detail": "記号を含めた全体を引用符で囲みます。" },
-      { "step": "表示する", "detail": "printを1回使います。" }
+      { "step": "表示する", "detail": "print()を1回使います。" }
     ],
     "commonMistakes": ["角かっこを丸かっこへ変えてしまう。"],
     "reviewChecklist": [
@@ -253,7 +253,7 @@
     "inputFormat": "入力はありません。",
     "outputFormat": "指定された3行を順番に表示します。",
     "samples": [{ "input": "", "output": "QUEST\n1\nBEGIN\n" }],
-    "hints": ["printを3回使います。", "中央の1は数値として書けます。"],
+    "hints": ["print()を3回使います。", "中央の1は数値として書けます。"],
     "solution": {
       "code": "print(\"QUEST\")\nprint(1)\nprint(\"BEGIN\")",
       "explanation": "各行の値を上から順にprintします。"
@@ -261,7 +261,7 @@
     "explanationTrace": [
       { "step": "行を分ける", "detail": "必要な出力は3行です。" },
       { "step": "値を確認", "detail": "文字列、数値、文字列の順です。" },
-      { "step": "順に表示", "detail": "3つのprintを並べます。" }
+      { "step": "順に表示", "detail": "3つのprint()を並べます。" }
     ],
     "commonMistakes": ["3つの値を1行へ表示する。"],
     "reviewChecklist": [

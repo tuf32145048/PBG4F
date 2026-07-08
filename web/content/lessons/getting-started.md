@@ -8,7 +8,7 @@
 print("Hello, Python!")
 ```
 
-[print](term:print) は、丸かっこの中に書いた値を[標準出力](term:standard-output)へ表示します。`"Hello, Python!"` のように引用符で囲んだ文字は[文字列](term:string)です。
+[print()](term:print) は、丸かっこの中に書いた値を[標準出力](term:standard-output)へ表示します。`"Hello, Python!"` のように引用符で囲んだ文字は[文字列](term:string)です。
 
 コードを書いたら、まずそのまま実行してください。表示された結果が予想と違った場合は、コードと結果を1文字ずつ見比べます。
 

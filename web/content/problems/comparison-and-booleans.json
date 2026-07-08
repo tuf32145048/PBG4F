@@ -1,0 +1,287 @@
+[
+  {
+    "id": "same-number",
+    "slug": "same-number",
+    "lessonId": "comparison-and-booleans",
+    "title": "同じ整数か",
+    "level": 1,
+    "conceptIds": ["input", "int", "comparison-operator", "boolean", "print"],
+    "statement": "2つの整数が1行ずつ入力されます。2つの整数が等しければ `True`、そうでなければ `False` を表示してください。",
+    "inputFormat": "1行目に整数 `a`、2行目に整数 `b` が入力されます。",
+    "outputFormat": "`a == b` の結果を表示します。",
+    "samples": [{ "input": "5\n5\n", "output": "True\n" }],
+    "hints": ["入力を2回受け取り、それぞれ整数へ変換します。", "等しいか調べるには `==` を使います。"],
+    "solution": {
+      "code": "a = int(input())\nb = int(input())\nprint(a == b)",
+      "explanation": "`==` は2つの値が等しいかを調べ、結果としてTrueまたはFalseを作ります。"
+    },
+    "explanationTrace": [
+      { "step": "入力を読む", "detail": "整数が2行で届きます。" },
+      { "step": "比べる対象", "detail": "aとbを比べます。" },
+      { "step": "条件にする", "detail": "等しいかどうかはa == bで表せます。" },
+      { "step": "結果を表示", "detail": "比較結果をそのままprintします。" }
+    ],
+    "commonMistakes": ["`a = b` と書いて、比較ではなく代入にしてしまう。"],
+    "reviewChecklist": [
+      { "id": "read-two-values", "label": "2つの入力を別々に受け取っている" },
+      { "id": "use-double-equals", "label": "比較に==を使っている" }
+    ]
+  },
+  {
+    "id": "different-number",
+    "slug": "different-number",
+    "lessonId": "comparison-and-booleans",
+    "title": "違う整数か",
+    "level": 1,
+    "conceptIds": ["input", "int", "comparison-operator", "boolean"],
+    "statement": "2つの整数が入力されます。2つの整数が等しくなければ `True`、等しければ `False` を表示してください。",
+    "inputFormat": "1行目に整数 `a`、2行目に整数 `b` が入力されます。",
+    "outputFormat": "`a != b` の結果を表示します。",
+    "samples": [{ "input": "3\n8\n", "output": "True\n" }],
+    "hints": ["等しくないことを調べる比較演算子があります。", "`!=` は「等しくない」を表します。"],
+    "solution": {
+      "code": "a = int(input())\nb = int(input())\nprint(a != b)",
+      "explanation": "`!=` を使うと、2つの値が違うかどうかをTrueまたはFalseで表せます。"
+    },
+    "explanationTrace": [
+      { "step": "入力を読む", "detail": "aとbの2つの整数があります。" },
+      { "step": "条件を読む", "detail": "知りたいのは等しくないかどうかです。" },
+      { "step": "式にする", "detail": "a != bと書きます。" }
+    ],
+    "commonMistakes": ["`a == b` を使い、反対の結果を出してしまう。"],
+    "reviewChecklist": [
+      { "id": "use-not-equal", "label": "!=を使っている" },
+      { "id": "print-result", "label": "比較結果をそのまま表示している" }
+    ]
+  },
+  {
+    "id": "at-least-ten",
+    "slug": "at-least-ten",
+    "lessonId": "comparison-and-booleans",
+    "title": "10以上か",
+    "level": 1,
+    "conceptIds": ["input", "int", "comparison-operator", "boolean"],
+    "statement": "整数が1つ入力されます。その整数が10以上なら `True`、10未満なら `False` を表示してください。",
+    "inputFormat": "1行に整数 `n` が入力されます。",
+    "outputFormat": "`n >= 10` の結果を表示します。",
+    "samples": [{ "input": "12\n", "output": "True\n" }],
+    "hints": ["「以上」は境界の値を含みます。", "10以上は `n >= 10` と書きます。"],
+    "solution": {
+      "code": "n = int(input())\nprint(n >= 10)",
+      "explanation": "`>=` は左側の値が右側以上かを調べます。10ちょうどのときもTrueです。"
+    },
+    "explanationTrace": [
+      { "step": "境界を確認", "detail": "境界は10です。" },
+      { "step": "含むか確認", "detail": "10以上なので10も含みます。" },
+      { "step": "比較する", "detail": "n >= 10を表示します。" }
+    ],
+    "commonMistakes": ["`>` を使い、10ちょうどをFalseにしてしまう。"],
+    "reviewChecklist": [
+      { "id": "include-ten", "label": "10を含む比較になっている" },
+      { "id": "convert-number", "label": "入力をintへ変換している" }
+    ]
+  },
+  {
+    "id": "word-match",
+    "slug": "word-match",
+    "lessonId": "comparison-and-booleans",
+    "title": "合い言葉チェック",
+    "level": 1,
+    "conceptIds": ["input", "string", "comparison-operator", "boolean"],
+    "statement": "1行目に正しい合い言葉、2行目に入力された合い言葉が与えられます。2つが等しければ `True`、違えば `False` を表示してください。",
+    "inputFormat": "1行目に文字列 `expected`、2行目に文字列 `answer` が入力されます。",
+    "outputFormat": "`expected == answer` の結果を表示します。",
+    "samples": [{ "input": "open\nopen\n", "output": "True\n" }],
+    "hints": ["文字列はintへ変換せず、そのまま受け取ります。", "文字列同士も==で等しいか比べられます。"],
+    "solution": {
+      "code": "expected = input()\nanswer = input()\nprint(expected == answer)",
+      "explanation": "2つの文字列をそのまま比較します。同じ文字の並びならTrueです。"
+    },
+    "explanationTrace": [
+      { "step": "入力の種類", "detail": "合い言葉は文字列として扱います。" },
+      { "step": "比べる", "detail": "expectedとanswerが同じかを調べます。" },
+      { "step": "表示する", "detail": "比較結果を表示します。" }
+    ],
+    "commonMistakes": ["文字列をintへ変換しようとする。"],
+    "reviewChecklist": [
+      { "id": "keep-string", "label": "入力を文字列のまま扱っている" },
+      { "id": "compare-strings", "label": "expectedとanswerを比較している" }
+    ]
+  },
+  {
+    "id": "smaller-score",
+    "slug": "smaller-score",
+    "lessonId": "comparison-and-booleans",
+    "title": "前の得点より高いか",
+    "level": 2,
+    "conceptIds": ["input", "int", "comparison-operator", "boolean"],
+    "statement": "1行目に前回の得点、2行目に今回の得点が入力されます。今回の得点が前回より高ければ `True`、そうでなければ `False` を表示してください。",
+    "inputFormat": "1行目に整数 `previous`、2行目に整数 `current` が入力されます。",
+    "outputFormat": "`previous < current` の結果を表示します。",
+    "samples": [{ "input": "70\n85\n", "output": "True\n" }],
+    "hints": ["「今回が前回より高い」を、前回 < 今回 と読み替えます。", "等しい場合は高くなっていないのでFalseです。"],
+    "solution": {
+      "code": "previous = int(input())\ncurrent = int(input())\nprint(previous < current)",
+      "explanation": "currentがpreviousより大きいかを、previous < currentとして調べます。"
+    },
+    "explanationTrace": [
+      { "step": "役割を決める", "detail": "previousは前回、currentは今回です。" },
+      { "step": "日本語を式へ直す", "detail": "今回が前回より高いはprevious < currentです。" },
+      { "step": "境界を確認", "detail": "同点は高いとは言わないので<を使います。" }
+    ],
+    "commonMistakes": ["`previous <= current` と書き、同点もTrueにしてしまう。"],
+    "reviewChecklist": [
+      { "id": "strictly-higher", "label": "同点を含まない比較になっている" },
+      { "id": "right-order", "label": "previousとcurrentの順序を間違えていない" }
+    ]
+  },
+  {
+    "id": "enough-money",
+    "slug": "enough-money",
+    "lessonId": "comparison-and-booleans",
+    "title": "買える金額か",
+    "level": 2,
+    "conceptIds": ["input", "int", "comparison-operator", "boolean"],
+    "statement": "1行目に商品の価格、2行目に持っている金額が入力されます。持っている金額で商品を買えるなら `True`、買えないなら `False` を表示してください。",
+    "inputFormat": "1行目に整数 `price`、2行目に整数 `money` が入力されます。",
+    "outputFormat": "`money >= price` の結果を表示します。",
+    "samples": [{ "input": "800\n1000\n", "output": "True\n" }],
+    "hints": ["買える条件は、持っている金額が価格以上であることです。", "「以上」なので==の場合もTrueです。"],
+    "solution": {
+      "code": "price = int(input())\nmoney = int(input())\nprint(money >= price)",
+      "explanation": "moneyがprice以上なら支払えるためTrueになります。"
+    },
+    "explanationTrace": [
+      { "step": "条件を言葉にする", "detail": "持っている金額が価格以上なら買えます。" },
+      { "step": "式にする", "detail": "money >= priceと書きます。" },
+      { "step": "結果を出す", "detail": "比較の結果を表示します。" }
+    ],
+    "commonMistakes": ["`price >= money` と順序を逆にしてしまう。"],
+    "reviewChecklist": [
+      { "id": "money-left", "label": "moneyを左側に置いて比較している" },
+      { "id": "include-equal", "label": "ちょうど同額をTrueにしている" }
+    ]
+  },
+  {
+    "id": "perfect-score",
+    "slug": "perfect-score",
+    "lessonId": "comparison-and-booleans",
+    "title": "満点か",
+    "level": 2,
+    "conceptIds": ["input", "int", "comparison-operator", "boolean"],
+    "statement": "得点が1つ入力されます。得点が100点ちょうどなら `True`、そうでなければ `False` を表示してください。",
+    "inputFormat": "1行に整数 `score` が入力されます。",
+    "outputFormat": "`score == 100` の結果を表示します。",
+    "samples": [{ "input": "100\n", "output": "True\n" }],
+    "hints": ["100以上ではなく、100ちょうどかを調べます。", "等しいか調べるには==を使います。"],
+    "solution": {
+      "code": "score = int(input())\nprint(score == 100)",
+      "explanation": "100点ちょうどかを調べるので、score == 100を表示します。"
+    },
+    "explanationTrace": [
+      { "step": "条件を確認", "detail": "満点は100点ちょうどです。" },
+      { "step": "比較を選ぶ", "detail": "ちょうど等しいかを見るので==です。" },
+      { "step": "表示する", "detail": "TrueまたはFalseを表示します。" }
+    ],
+    "commonMistakes": ["`score >= 100` と書き、100を超える値もTrueにしてしまう。"],
+    "reviewChecklist": [
+      { "id": "exactly-hundred", "label": "100ちょうどを調べている" },
+      { "id": "not-assignment", "label": "比較に=ではなく==を使っている" }
+    ]
+  },
+  {
+    "id": "above-freezing",
+    "slug": "above-freezing",
+    "lessonId": "comparison-and-booleans",
+    "title": "0度より高いか",
+    "level": 2,
+    "conceptIds": ["input", "int", "comparison-operator", "boolean"],
+    "statement": "気温を表す整数が入力されます。気温が0より高ければ `True`、0以下なら `False` を表示してください。",
+    "inputFormat": "1行に整数 `temperature` が入力されます。",
+    "outputFormat": "`temperature > 0` の結果を表示します。",
+    "samples": [{ "input": "-3\n", "output": "False\n" }],
+    "hints": ["「0より高い」は0を含みません。", "`>` と `>=` の違いを確認します。"],
+    "solution": {
+      "code": "temperature = int(input())\nprint(temperature > 0)",
+      "explanation": "0を含まないので、temperature > 0を使います。"
+    },
+    "explanationTrace": [
+      { "step": "境界を確認", "detail": "境界は0です。" },
+      { "step": "含むか確認", "detail": "0より高いので0は含みません。" },
+      { "step": "式にする", "detail": "temperature > 0と書きます。" }
+    ],
+    "commonMistakes": ["`>=` を使い、0度もTrueにしてしまう。"],
+    "reviewChecklist": [
+      { "id": "exclude-zero", "label": "0を含まない比較になっている" },
+      { "id": "handle-negative", "label": "負の数でも比較できる" }
+    ]
+  },
+  {
+    "id": "total-price-threshold",
+    "slug": "total-price-threshold",
+    "lessonId": "comparison-and-booleans",
+    "title": "合計金額が1000円以上か",
+    "level": 3,
+    "conceptIds": [
+      "input",
+      "int",
+      "arithmetic-operator",
+      "comparison-operator",
+      "boolean"
+    ],
+    "statement": "1行目に商品の単価、2行目に個数が入力されます。合計金額が1000円以上なら `True`、そうでなければ `False` を表示してください。",
+    "inputFormat": "1行目に整数 `price`、2行目に整数 `count` が入力されます。",
+    "outputFormat": "`price * count >= 1000` の結果を表示します。",
+    "samples": [{ "input": "250\n4\n", "output": "True\n" }],
+    "hints": ["まず合計金額を計算します。", "合計金額を1000と比較します。"],
+    "solution": {
+      "code": "price = int(input())\ncount = int(input())\ntotal = price * count\nprint(total >= 1000)",
+      "explanation": "単価と個数からtotalを作り、そのtotalが1000以上かを比較します。"
+    },
+    "explanationTrace": [
+      { "step": "入力を読む", "detail": "単価と個数が別々に入力されます。" },
+      { "step": "先に計算する", "detail": "合計金額はprice * countです。" },
+      { "step": "比較する", "detail": "total >= 1000で条件を作ります。" },
+      { "step": "表示する", "detail": "条件式の結果を表示します。" }
+    ],
+    "commonMistakes": ["priceだけを1000と比較し、個数を使わない。"],
+    "reviewChecklist": [
+      { "id": "calculate-total", "label": "price * countで合計を計算している" },
+      { "id": "compare-total", "label": "合計金額を1000と比較している" }
+    ]
+  },
+  {
+    "id": "two-scores-target",
+    "slug": "two-scores-target",
+    "lessonId": "comparison-and-booleans",
+    "title": "2科目の合計が目標以上か",
+    "level": 3,
+    "conceptIds": [
+      "input",
+      "int",
+      "arithmetic-operator",
+      "comparison-operator",
+      "boolean"
+    ],
+    "statement": "1行目に国語の点数、2行目に数学の点数、3行目に目標点が入力されます。2科目の合計が目標点以上なら `True`、そうでなければ `False` を表示してください。",
+    "inputFormat": "1行目に整数 `japanese`、2行目に整数 `math`、3行目に整数 `target` が入力されます。",
+    "outputFormat": "`japanese + math >= target` の結果を表示します。",
+    "samples": [{ "input": "70\n65\n130\n", "output": "True\n" }],
+    "hints": ["先に2科目の合計を作ります。", "合計がtarget以上かを比較します。"],
+    "solution": {
+      "code": "japanese = int(input())\nmath = int(input())\ntarget = int(input())\ntotal = japanese + math\nprint(total >= target)",
+      "explanation": "2科目の合計をtotalに入れ、totalがtarget以上かを調べます。"
+    },
+    "explanationTrace": [
+      { "step": "入力の役割", "detail": "2つの点数と目標点があります。" },
+      { "step": "必要な値を作る", "detail": "比較前に合計点totalを計算します。" },
+      { "step": "条件にする", "detail": "total >= targetで目標以上かを表します。" },
+      { "step": "結果を表示", "detail": "比較結果をprintします。" }
+    ],
+    "commonMistakes": ["japaneseだけ、またはmathだけをtargetと比較してしまう。"],
+    "reviewChecklist": [
+      { "id": "read-three-lines", "label": "3行の入力をすべて受け取っている" },
+      { "id": "sum-before-compare", "label": "比較前に2科目の合計を作っている" }
+    ]
+  }
+]

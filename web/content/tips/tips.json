@@ -27,7 +27,8 @@
     "lessonIds": [
       "getting-started",
       "values-and-variables",
-      "input-and-conversion"
+      "input-and-conversion",
+      "comparison-and-booleans"
     ],
     "termIds": ["print", "standard-output"]
   },
@@ -35,7 +36,21 @@
     "id": "separate-steps",
     "title": "分からないときは処理を分ける",
     "body": "入力、変換、計算、出力を別の行へ分けると、どこまで正しく動いているか確認しやすくなります。",
-    "lessonIds": ["input-and-conversion"],
+    "lessonIds": ["input-and-conversion", "comparison-and-booleans"],
     "termIds": ["input", "type-conversion", "print", "variable"]
+  },
+  {
+    "id": "equals-needs-two-equals",
+    "title": "等しいか調べるときは==",
+    "body": "Pythonでは=は代入、==は比較です。問題文の「等しい」「同じ」「ちょうど」は、まず==を使えないか考えます。",
+    "lessonIds": ["comparison-and-booleans"],
+    "termIds": ["assignment", "comparison-operator"]
+  },
+  {
+    "id": "read-condition-as-question",
+    "title": "条件式は質問として読む",
+    "body": "price >= 1000 は「priceは1000以上ですか」と読むと、TrueとFalseのどちらになるか考えやすくなります。",
+    "lessonIds": ["comparison-and-booleans"],
+    "termIds": ["condition", "boolean", "comparison-operator"]
   }
 ]

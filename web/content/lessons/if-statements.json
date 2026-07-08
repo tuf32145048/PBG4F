@@ -15,6 +15,7 @@
     "conditional-branching",
     "condition",
     "condition-expression",
+    "expression",
     "if-statement",
     "boolean",
     "comparison-operator",

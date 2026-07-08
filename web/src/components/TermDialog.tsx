@@ -6,10 +6,8 @@ import styles from "../styles/app.module.css";
 
 const termCategoryLabels: Record<TermCategory, string> = {
   "general-concept": "一般概念",
-  "programming-concept": "プログラミング概念",
-  "python-syntax": "Pythonの文法",
-  "python-api": "Pythonの機能・関数・メソッド",
-  environment: "実行環境・競プロ寄りの概念",
+  "programming-concept": "プログラミング全般概念",
+  "python-specific": "Pythonの文法・機能・関数・メソッド・予約語",
 };
 
 export function TermDialog() {

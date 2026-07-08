@@ -25,6 +25,8 @@
 - learner before:
 - learner after:
 - prerequisite lesson ids:
+- term plan path:
+- term plan approved:
 - main terms:
 - optional tips:
 - problem count:
@@ -40,14 +42,16 @@
 ## 追加順
 
 1. Lesson Briefを埋める。
-2. `web/content/lessons/<slug>.json` を作る。
-3. `web/content/lessons/<slug>.md` を作る。
-4. `web/content/problems/<slug>.json` を作る。
-5. `web/content/terms/terms.json` に不足用語を追加する。
-6. `web/content/tips/tips.json` に補足を追加する。
-7. `npm run validate` を `web/` で実行する。
-8. UI・スキーマ・挙動を変えた場合だけ `test`、`lint`、`build` まで実行する。
-9. `notes/TODO.md` に作業記録と残課題を追記する。
+2. `term-plan-template.md` を使い、`notes/term-plans/YYYY-MM-DD-<lesson-slug>.md` に用語候補をまとめる。
+3. 用語の対応についてユーザー確認を受ける。
+4. `web/content/lessons/<slug>.json` を作る。
+5. `web/content/lessons/<slug>.md` を作る。
+6. `web/content/problems/<slug>.json` を作る。
+7. `web/content/terms/terms.json` に不足用語を追加する。
+8. `web/content/tips/tips.json` に補足を追加する。
+9. `npm run validate` を `web/` で実行する。
+10. UI・スキーマ・挙動を変えた場合だけ `test`、`lint`、`build` まで実行する。
+11. `notes/TODO.md` に作業記録と残課題を追記する。
 
 IDは小文字のkebab-caseにします。逆参照はJSONへ重複保存しません。`ContentCatalog` 生成時に算出されます。
 
@@ -171,6 +175,8 @@ print("example")
 ```
 
 `short` は初学者がその場で読む前提にします。実装詳細、メモリ、型システム、数学的背景などは `later` へ逃がします。
+
+カテゴリは `general-concept`、`programming-concept`、`python-specific` の3つだけを使います。
 
 ## Tip Object
 

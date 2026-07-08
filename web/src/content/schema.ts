@@ -10,9 +10,7 @@ const nonEmptyText = z.string().trim().min(1);
 export const termCategorySchema = z.enum([
   "general-concept",
   "programming-concept",
-  "python-syntax",
-  "python-api",
-  "environment",
+  "python-specific",
 ]);
 
 export const lessonMetadataSchema = z.object({

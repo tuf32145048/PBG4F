@@ -1,6 +1,9 @@
 import { Link, useParams } from "react-router-dom";
 import { useProgress } from "../../app/useProgress";
-import { MarkdownContent } from "../../components/MarkdownContent";
+import {
+  InlineContent,
+  MarkdownContent,
+} from "../../components/MarkdownContent";
 import { TermChip } from "../../components/TermChip";
 import { catalog } from "../../content/loadContent";
 import styles from "../../styles/app.module.css";
@@ -35,7 +38,9 @@ export function LessonPage() {
           CHAPTER {String(lesson.order).padStart(2, "0")}
         </p>
         <h1>{lesson.title}</h1>
-        <p>{lesson.summary}</p>
+        <p>
+          <InlineContent>{lesson.summary}</InlineContent>
+        </p>
       </header>
 
       <section className={styles.objectivePanel}>
@@ -43,7 +48,9 @@ export function LessonPage() {
         <h2>この章でできるようになること</h2>
         <ul>
           {lesson.objectives.map((objective) => (
-            <li key={objective}>{objective}</li>
+            <li key={objective}>
+              <InlineContent>{objective}</InlineContent>
+            </li>
           ))}
         </ul>
       </section>
@@ -70,7 +77,9 @@ export function LessonPage() {
           <aside className={styles.tipCard} key={tip.id}>
             <span>TIP</span>
             <h3>{tip.title}</h3>
-            <p>{tip.body}</p>
+            <p>
+              <InlineContent>{tip.body}</InlineContent>
+            </p>
           </aside>
         ))}
       </section>

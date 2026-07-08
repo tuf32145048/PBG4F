@@ -1,4 +1,4 @@
-import { cleanup, render, screen } from "@testing-library/react";
+import { cleanup, render, screen, within } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { afterEach, beforeEach, describe, expect, it } from "vitest";
 import { App } from "../src/app/App";
@@ -38,6 +38,15 @@ describe("application routes and interactions", () => {
     expect(
       screen.getByRole("dialog", { name: "print" }),
     ).toBeInTheDocument();
+    expect(
+      screen.getByText("値を画面へ表示するための関数です。"),
+    ).toBeVisible();
+    expect(
+      screen.getByText("もう少し詳しく").closest("details"),
+    ).not.toHaveAttribute("open");
+    expect(
+      screen.getByText("後で分かる話").closest("details"),
+    ).not.toHaveAttribute("open");
 
     await user.keyboard("{Escape}");
     expect(screen.queryByRole("dialog")).not.toBeInTheDocument();
@@ -54,14 +63,35 @@ describe("application routes and interactions", () => {
         name: "最初のあいさつ",
       }),
     ).toBeInTheDocument();
-    expect(screen.queryByText("表示にはprintを使います。")).not.toBeInTheDocument();
+    expect(screen.queryByText("HINT 1")).not.toBeInTheDocument();
 
     await user.click(
       screen.getByRole("button", { name: "ヒントを1つ開く" }),
     );
 
-    expect(screen.getByText("表示にはprintを使います。")).toBeInTheDocument();
-    expect(screen.queryByText("表示する文字列を引用符で囲みます。")).not.toBeInTheDocument();
+    const hint = screen.getByText("HINT 1").parentElement;
+    expect(hint).not.toBeNull();
+    expect(hint).toHaveTextContent("表示にはprintを使います。");
+    expect(
+      within(hint!).getByRole("button", { name: "print" }),
+    ).toBeInTheDocument();
+    expect(screen.queryByText("HINT 2")).not.toBeInTheDocument();
+  });
+
+  it("expands optional term explanations on demand", async () => {
+    const user = userEvent.setup();
+    window.location.hash = "#/lessons/getting-started";
+    render(<App />);
+
+    const printButtons = await screen.findAllByRole("button", {
+      name: "print",
+    });
+    await user.click(printButtons[0]!);
+
+    const detailSummary = screen.getByText("もう少し詳しく");
+    await user.click(detailSummary);
+
+    expect(detailSummary.closest("details")).toHaveAttribute("open");
   });
 
   it("starts with the solution details closed", async () => {

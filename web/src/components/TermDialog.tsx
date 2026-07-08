@@ -56,7 +56,7 @@ export function TermDialog() {
       }}
       role="dialog"
     >
-      <section className={styles.dialogPanel}>
+      <section className={styles.dialogPanel} key={term.id}>
         <button
           aria-label="用語説明を閉じる"
           className={styles.dialogClose}
@@ -76,14 +76,14 @@ export function TermDialog() {
           <strong>一言</strong>
           <p>{term.short}</p>
         </div>
-        <div className={styles.termLevel}>
-          <strong>もう少し詳しく</strong>
+        <details className={styles.termDisclosure}>
+          <summary>もう少し詳しく</summary>
           <p>{term.detail}</p>
-        </div>
-        <div className={styles.termLevel}>
-          <strong>後で分かる話</strong>
+        </details>
+        <details className={styles.termDisclosure}>
+          <summary>後で分かる話</summary>
           <p>{term.later}</p>
-        </div>
+        </details>
 
         {(relatedLessons.length > 0 || relatedProblems.length > 0) && (
           <div className={styles.relatedLinks}>

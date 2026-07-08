@@ -1,9 +1,9 @@
-import { useSearchParams } from "react-router-dom";
 import { catalog } from "../content/loadContent";
 import styles from "../styles/app.module.css";
+import { useTermDialog } from "./useTermDialog";
 
 export function TermChip({ termId }: { termId: string }) {
-  const [, setSearchParams] = useSearchParams();
+  const openTerm = useTermDialog();
   const term = catalog.termById.get(termId);
 
   if (!term) {
@@ -13,13 +13,7 @@ export function TermChip({ termId }: { termId: string }) {
   return (
     <button
       className={styles.chip}
-      onClick={() => {
-        setSearchParams((current) => {
-          const next = new URLSearchParams(current);
-          next.set("term", term.id);
-          return next;
-        });
-      }}
+      onClick={() => openTerm(term.id)}
       type="button"
     >
       {term.label}

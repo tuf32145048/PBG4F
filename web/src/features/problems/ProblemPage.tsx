@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { useProgress } from "../../app/useProgress";
+import { InlineContent } from "../../components/MarkdownContent";
 import { TermChip } from "../../components/TermChip";
 import { catalog } from "../../content/loadContent";
 import styles from "../../styles/app.module.css";
@@ -59,17 +60,23 @@ export function ProblemPage() {
 
       <section className={styles.problemStatement}>
         <p className={styles.eyebrow}>MISSION</p>
-        <p>{problem.statement}</p>
+        <p>
+          <InlineContent>{problem.statement}</InlineContent>
+        </p>
       </section>
 
       <div className={styles.ioGrid}>
         <section>
           <h2>入力</h2>
-          <p>{problem.inputFormat}</p>
+          <p>
+            <InlineContent>{problem.inputFormat}</InlineContent>
+          </p>
         </section>
         <section>
           <h2>出力</h2>
-          <p>{problem.outputFormat}</p>
+          <p>
+            <InlineContent>{problem.outputFormat}</InlineContent>
+          </p>
         </section>
       </div>
 
@@ -90,7 +97,11 @@ export function ProblemPage() {
                 <code>{sample.output}</code>
               </pre>
             </div>
-            {sample.explanation && <p>{sample.explanation}</p>}
+            {sample.explanation && (
+              <p>
+                <InlineContent>{sample.explanation}</InlineContent>
+              </p>
+            )}
           </div>
         ))}
       </section>
@@ -101,7 +112,9 @@ export function ProblemPage() {
         {problem.hints.slice(0, visibleHintCount).map((hint, index) => (
           <div className={styles.hintItem} key={hint}>
             <span>HINT {index + 1}</span>
-            <p>{hint}</p>
+            <p>
+              <InlineContent>{hint}</InlineContent>
+            </p>
           </div>
         ))}
         {visibleHintCount < problem.hints.length ? (
@@ -125,8 +138,12 @@ export function ProblemPage() {
             <li key={trace.step}>
               <span>{String(index + 1).padStart(2, "0")}</span>
               <div>
-                <strong>{trace.step}</strong>
-                <p>{trace.detail}</p>
+                <strong>
+                  <InlineContent>{trace.step}</InlineContent>
+                </strong>
+                <p>
+                  <InlineContent>{trace.detail}</InlineContent>
+                </p>
               </div>
             </li>
           ))}
@@ -138,7 +155,9 @@ export function ProblemPage() {
         <pre>
           <code>{problem.solution.code}</code>
         </pre>
-        <p>{problem.solution.explanation}</p>
+        <p>
+          <InlineContent>{problem.solution.explanation}</InlineContent>
+        </p>
       </details>
 
       <div className={styles.reviewGrid}>
@@ -147,7 +166,9 @@ export function ProblemPage() {
           <h2>間違えやすい点</h2>
           <ul>
             {problem.commonMistakes.map((mistake) => (
-              <li key={mistake}>{mistake}</li>
+              <li key={mistake}>
+                <InlineContent>{mistake}</InlineContent>
+              </li>
             ))}
           </ul>
         </section>
@@ -156,16 +177,32 @@ export function ProblemPage() {
           <p className={styles.eyebrow}>FINAL CHECK</p>
           <h2>見直しポイント</h2>
           {problem.reviewChecklist.map((item) => (
-            <label key={item.id}>
+            <div
+              className={styles.checklistItem}
+              key={item.id}
+              onClick={(event) => {
+                if ((event.target as HTMLElement).closest("button, input")) {
+                  return;
+                }
+                setReviewItem(
+                  problem.id,
+                  item.id,
+                  !checkedItems.includes(item.id),
+                );
+              }}
+            >
               <input
+                aria-labelledby={`${problem.id}-${item.id}-label`}
                 checked={checkedItems.includes(item.id)}
                 onChange={(event) =>
                   setReviewItem(problem.id, item.id, event.target.checked)
                 }
                 type="checkbox"
               />
-              <span>{item.label}</span>
-            </label>
+              <span id={`${problem.id}-${item.id}-label`}>
+                <InlineContent>{item.label}</InlineContent>
+              </span>
+            </div>
           ))}
         </section>
       </div>

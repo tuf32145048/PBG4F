@@ -15,6 +15,34 @@ afterEach(() => {
 });
 
 describe("application routes and interactions", () => {
+  it("opens and closes the sidebar navigation", async () => {
+    const user = userEvent.setup();
+    render(<App />);
+
+    const menu = await screen.findByRole(
+      "complementary",
+      { name: "学習メニュー" },
+      routeLoadTimeout,
+    );
+    const toggle = screen.getByRole("button", {
+      name: "サイドメニューを閉じる",
+    });
+
+    expect(menu).toHaveAttribute("aria-hidden", "false");
+    expect(menu).not.toHaveAttribute("inert");
+
+    await user.click(toggle);
+
+    expect(menu).toHaveAttribute("aria-hidden", "true");
+    expect(menu).toHaveAttribute("inert");
+    expect(toggle).toHaveAccessibleName("サイドメニューを開く");
+
+    await user.click(toggle);
+
+    expect(menu).toHaveAttribute("aria-hidden", "false");
+    expect(menu).not.toHaveAttribute("inert");
+  });
+
   it("opens a lesson directly from a hash URL", async () => {
     window.location.hash = "#/lessons/getting-started";
     render(<App />);

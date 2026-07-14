@@ -16,14 +16,19 @@ export function HomePage() {
         <div>
           <p className={styles.eyebrow}>Python Beginner Guide</p>
           <h1>
-            読める。
+            読んで、
             <br />
-            分けられる。
+            分解して、
             <br />
-            コードにできる。
+            書いてみる。
           </h1>
           <p className={styles.heroLead}>
-            5〜10分の小さな問題を攻略しながら、Pythonの基礎と問題文の読み方を身につけるガイドです。
+            1日5〜10分の小さなクエストで、Pythonの基礎を少しずつ攻略しましょう。
+          </p>
+          <p className={styles.heroSupport}>
+            座学で習ったはずなのに、いざコードを書こうとすると手が止まる。そんな人のための実践ガイドです。
+            <br />
+            小さな問題をパズルのように解きながら、「プログラミングの考え方」を身につけましょう。
           </p>
           <div className={styles.heroActions}>
             <Link
@@ -100,27 +105,33 @@ export function HomePage() {
 
       <section className={styles.guidePanel}>
         <p className={styles.eyebrow}>HOW TO USE</p>
-        <h2>迷ったら、この順番で確認</h2>
+        <h2>迷ったら、この3ステップ！</h2>
         <ol className={styles.stepList}>
           <li>
             <span>01</span>
             <div>
-              <strong>入力と出力を分ける</strong>
-              <p>何が与えられ、最終的に何を表示するかを先に確認します。</p>
+              <strong>ゴールを確認する</strong>
+              <p>
+                何を受け取って、最後に何を表示すればクリアなのかを確認します。
+              </p>
             </div>
           </li>
           <li>
             <span>02</span>
             <div>
-              <strong>手でサンプルを試す</strong>
-              <p>コードを書く前に、少ない値で結果までの流れを追います。</p>
+              <strong>シミュレーションする</strong>
+              <p>
+                いきなりコードを書かず、まずは手元で簡単な例の答えを出してみます。
+              </p>
             </div>
           </li>
           <li>
             <span>03</span>
             <div>
-              <strong>小さな処理へ分ける</strong>
-              <p>入力、変換、計算、出力を別々の行として考えます。</p>
+              <strong>細かく分解する</strong>
+              <p>
+                「受け取る」「計算する」「表示する」など、1行ずつ別々の処理として考えます。
+              </p>
             </div>
           </li>
         </ol>

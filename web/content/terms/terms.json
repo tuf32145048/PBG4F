@@ -30,8 +30,8 @@
     "category": "programming-concept",
     "descriptionTargetId": "error-message",
     "autoLink": true,
-    "short": "Pythonが処理を続けられなかった理由の報告です。",
-    "detail": "エラーの種類、場所、関連するコードが示されます。まず最後の行と行番号を確認します。",
+    "short": "Pythonが処理を続けられなかった場所や理由を知らせる報告です。",
+    "detail": "エラーが出ても、失敗として減点されているわけではありません。まず行番号を見て、その周辺のスペルミスや引用符・丸かっこの閉じ忘れを探します。慣れてきたら、最後の行に書かれたエラーの種類も確認します。",
     "later": "複数行のトレースバックを上からたどると、関数の呼び出し経路も確認できます。",
     "relatedTermIds": ["comment"]
   },

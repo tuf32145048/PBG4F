@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { useProgress } from "../../app/useProgress";
+import { CodeBlock } from "../../components/CodeBlock";
 import { InlineContent } from "../../components/MarkdownContent";
 import { TermChip } from "../../components/TermChip";
 import { catalog } from "../../content/loadContent";
@@ -87,15 +88,15 @@ export function ProblemPage() {
           <div className={styles.sampleGrid} key={`${sample.input}-${index}`}>
             <div>
               <strong>入力例 {index + 1}</strong>
-              <pre>
+              <CodeBlock copyText={sample.input} variant="sample">
                 <code>{sample.input || "（入力なし）"}</code>
-              </pre>
+              </CodeBlock>
             </div>
             <div>
               <strong>出力例 {index + 1}</strong>
-              <pre>
+              <CodeBlock copyText={sample.output} variant="sample">
                 <code>{sample.output}</code>
-              </pre>
+              </CodeBlock>
             </div>
             {sample.explanation && (
               <p>
@@ -152,9 +153,9 @@ export function ProblemPage() {
 
       <details className={styles.solutionPanel}>
         <summary>解答例を見る</summary>
-        <pre>
+        <CodeBlock copyText={problem.solution.code} variant="solution">
           <code>{problem.solution.code}</code>
-        </pre>
+        </CodeBlock>
         <p>
           <InlineContent>{problem.solution.explanation}</InlineContent>
         </p>

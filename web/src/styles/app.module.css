@@ -580,24 +580,6 @@
   margin: 14px 0;
 }
 
-.markdown pre,
-.solutionPanel pre,
-.sampleGrid pre {
-  padding: 20px;
-  color: #e8edf3;
-  background: #1c2637;
-  border: 1px solid #3b485c;
-  border-radius: 6px;
-  box-shadow: inset 4px 0 #f1b84b;
-  overflow-x: auto;
-}
-
-.markdown code,
-.solutionPanel code,
-.sampleGrid code {
-  font-family: "Cascadia Code", "Courier New", monospace;
-}
-
 .markdown :not(pre) > code {
   padding: 2px 6px;
   color: #9d3e2e;
@@ -847,11 +829,6 @@
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
-.sampleGrid pre {
-  min-height: 90px;
-  margin: 8px 0 0;
-}
-
 .hintPanel {
   padding: 34px;
   background:
@@ -925,7 +902,6 @@
   border-bottom: 1px solid #d3cdc2;
 }
 
-.solutionPanel pre,
 .solutionPanel p {
   margin: 20px 24px;
 }

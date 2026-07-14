@@ -9,6 +9,7 @@ import {
   createTermCandidates,
 } from "../content/termAutolink";
 import styles from "../styles/app.module.css";
+import { CodeBlock } from "./CodeBlock";
 import { TermLink } from "./TermLink";
 
 const termCandidates = createTermCandidates(catalog.terms);
@@ -29,6 +30,9 @@ const sharedComponents: Components = {
         {children}
       </a>
     );
+  },
+  pre({ children }) {
+    return <CodeBlock>{children}</CodeBlock>;
   },
 };
 

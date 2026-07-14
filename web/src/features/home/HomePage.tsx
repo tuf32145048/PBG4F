@@ -14,7 +14,7 @@ export function HomePage() {
     <div className={styles.page}>
       <section className={styles.hero}>
         <div>
-          <p className={styles.eyebrow}>PYTHON BEGINNER FIELD GUIDE</p>
+          <p className={styles.eyebrow}>Python Beginner Guide</p>
           <h1>
             読める。
             <br />

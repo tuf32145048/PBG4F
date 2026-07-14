@@ -22,10 +22,7 @@ export function AppShell() {
       <aside className={styles.sidebar}>
         <NavLink className={styles.brand} to="/">
           <span className={styles.brandMark}>Py</span>
-          <span>
-            <strong>Python Quest</strong>
-            <small>Beginner Guide</small>
-          </span>
+          <span className={styles.brandName}>Python Beginner Guide</span>
         </NavLink>
 
         <nav aria-label="メインナビゲーション">
@@ -80,7 +77,7 @@ export function AppShell() {
       <div className={styles.mainColumn}>
         <header className={styles.mobileHeader}>
           <NavLink className={styles.mobileBrand} to="/">
-            Python Quest
+            Python Beginner Guide
           </NavLink>
           <NavLink to="/problems">問題一覧</NavLink>
         </header>

@@ -112,6 +112,53 @@ describe("application routes and interactions", () => {
     expect(screen.queryByText("HINT 2")).not.toBeInTheDocument();
   });
 
+  it("resets revealed hints after moving to the next problem", async () => {
+    const user = userEvent.setup();
+    window.location.hash = "#/problems/hello-python";
+    render(<App />);
+
+    expect(
+      await screen.findByRole("heading", {
+        level: 1,
+        name: "最初のあいさつ",
+      }, routeLoadTimeout),
+    ).toBeInTheDocument();
+
+    await user.click(
+      screen.getByRole("button", { name: "ヒントを1つ開く" }),
+    );
+    expect(screen.getByText("HINT 1")).toBeInTheDocument();
+
+    await user.click(
+      screen.getByRole("link", { name: "次の問題: 朝のメッセージ" }),
+    );
+
+    expect(
+      await screen.findByRole("heading", {
+        level: 1,
+        name: "朝のメッセージ",
+      }, routeLoadTimeout),
+    ).toBeInTheDocument();
+    expect(screen.queryByText("HINT 1")).not.toBeInTheDocument();
+  });
+
+  it("updates a problem review checklist item", async () => {
+    const user = userEvent.setup();
+    window.location.hash = "#/problems/hello-python";
+    render(<App />);
+
+    const checkbox = await screen.findByRole(
+      "checkbox",
+      { name: "大文字・小文字と記号が一致している" },
+      routeLoadTimeout,
+    );
+    expect(checkbox).not.toBeChecked();
+
+    await user.click(checkbox);
+
+    expect(checkbox).toBeChecked();
+  });
+
   it("expands optional term explanations on demand", async () => {
     const user = userEvent.setup();
     window.location.hash = "#/lessons/getting-started";
